@@ -1,0 +1,47 @@
+    
+<import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
+<view>
+    <swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="true" interval="5000">
+        <swiper-item>
+            <image id="7" src="/images/1.jpg" data-postId="3"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/2.jpg" data-postId="4"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/3.jpg" data-postId="5"></image>
+        </swiper-item>
+    </swiper>
+    <view class="text_container">
+    <image class="text_icon" src='/images/icon/laba.png'></image>
+    <text class='text_1'>公告</text>
+  
+     <text class='text_2'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+    <image class="icon_img" src='/images/icon/rightarrow.png'></image>
+</view>
+</view>
+
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="搜索商品" 
+  placeholder-class="placeholder" bindfocus="onBindFocus"
+  bindconfirm="onBindConfirm"/>
+  <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
+</view>
+<view class="container" wx:if="{{containerShow}}">
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...inTheaters}}" />
+  </view>
+
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}" />
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...top250}}"/>
+  </view>
+</view>
+
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="movieGridTemplate" data="{{...searchResult}}"/>
+</view>
