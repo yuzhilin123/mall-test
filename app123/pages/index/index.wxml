@@ -1,6 +1,5 @@
     
-<import src="movie-list/movie-list-template.wxml" />
-<import src="movie-grid/movie-grid-template.wxml" />
+
 <view>
     <swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="true" interval="5000">
         <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName">
@@ -30,19 +29,5 @@
   bindconfirm="onBindConfirm"/>
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
-<view class="container" wx:if="{{containerShow}}">
-  <view class="movies-template">
-    <template is="movieListTemplate" data="{{...inTheaters}}" />
-  </view>
 
-  <view class="movies-template">
-    <template is="movieListTemplate" data="{{...comingSoon}}" />
-  </view>
-  <view class="movies-template">
-    <template is="movieListTemplate" data="{{...top250}}"/>
-  </view>
-</view>
 
-<view class="search-panel" wx:if="{{searchPanelShow}}">
-    <template is="movieGridTemplate" data="{{...searchResult}}"/>
-</view>

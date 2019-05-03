@@ -1,6 +1,4 @@
-/* pages/index/index.wxss */
-  @import "movie-list/movie-list-template.wxss";
-@import "movie-grid/movie-grid-template.wxss";
+
  swiper{
      width:100%;
      height:400rpx;

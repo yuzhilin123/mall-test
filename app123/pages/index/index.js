@@ -28,7 +28,7 @@ Page({
       },
       success(res) {
         if(res.data.code===0){
-          // console.log(res.data)
+          console.log(res.data)
           that.setData({
             shouyeData: res.data.data
           })
