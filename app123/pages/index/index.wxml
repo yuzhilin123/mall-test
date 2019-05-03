@@ -20,7 +20,7 @@
 </view>
 
 
-
+<view class="container" >
 <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
@@ -84,3 +84,4 @@
       </view>
     </view>
   </view>
+   </view>
