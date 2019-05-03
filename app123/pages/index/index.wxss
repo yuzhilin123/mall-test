@@ -86,7 +86,7 @@
 
 .search-panel{
     position:absolute;
-    top:80rpx;
+    top:580rpx;
 }
 
 .xx-img{

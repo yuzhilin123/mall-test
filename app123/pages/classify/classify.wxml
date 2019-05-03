@@ -1,2 +1,8 @@
-<!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="搜索商品" 
+  placeholder-class="placeholder" bindfocus="onBindFocus"
+  bindconfirm="onBindConfirm"/>
+  <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
+</view>
