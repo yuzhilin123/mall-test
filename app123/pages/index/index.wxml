@@ -3,15 +3,16 @@
 <import src="movie-grid/movie-grid-template.wxml" />
 <view>
     <swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="true" interval="5000">
-        <swiper-item>
-            <image id="7" src="/images/1.jpg" data-postId="3"></image>
+        <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName">
+        <image src="{{itemName.image}}"></image>
+            
         </swiper-item>
-        <swiper-item>
+        <!-- <swiper-item>
             <image src="/images/2.jpg" data-postId="4"></image>
         </swiper-item>
         <swiper-item>
             <image src="/images/3.jpg" data-postId="5"></image>
-        </swiper-item>
+        </swiper-item> -->
     </swiper>
     <view class="text_container">
     <image class="text_icon" src='/images/icon/laba.png'></image>

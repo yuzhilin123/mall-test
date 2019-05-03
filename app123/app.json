@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/classify/classify",
     "pages/cart/cart",
-    "pages/index/index",
+   
     
     
     "pages/personal_center/personal_center"

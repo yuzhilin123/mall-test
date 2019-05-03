@@ -5,6 +5,7 @@ Page({
   // SOAP XML
   //粒度 不是 力度
   data: {
+    shouyeData:{},
     inTheaters: {},
     comingSoon: {},
     top250: {},
@@ -18,6 +19,21 @@ Page({
   },
 
   onLoad: function (event) {
+    var that = this
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/shouye', // 仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if(res.data.code===0){
+         console.log(res.data)
+          that.setData({
+            shouyeData: res.data.data
+          })
+        }
+      }
+    })
     var inTheatersUrl = app.globalData.doubanBase +
       "/v2/movie/in_theaters" + "?start=0&count=3";
     var comingSoonUrl = app.globalData.doubanBase +
