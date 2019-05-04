@@ -44,7 +44,7 @@ Page({
       },
       success(res) {
         if (res.data.code === 0) {
-          // console.log(res.data)
+          console.log(res.data.data)
           that.setData({
             moreimages: res.data.data
           })

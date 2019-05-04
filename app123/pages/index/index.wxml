@@ -24,14 +24,14 @@
 <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">分类栏目1</text>
-        <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
+        <text class="slogan">{{moreimages.name}}</text>
+        <view catchtap="onMoreTap" class="more" data-category="{{moreimages.name}}">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{moreimages}}" wx:for-item="itemName" wx:key="unique">
+      <block wx:for="{{moreimages.supports}}" wx:for-item="itemName" wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
@@ -45,14 +45,14 @@
 <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">分类栏目2</text>
-        <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
+        <text class="slogan">{{fenleilanmu2.name}}</text>
+        <view catchtap="onMoreTap" class="more" data-category="{{fenleilanmu2.name}}">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{fenleilanmu2}}" wx:for-item="itemName"wx:key="unique">
+      <block wx:for="{{fenleilanmu2.supports}}" wx:for-item="itemName"wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
@@ -67,14 +67,14 @@
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">分类栏目3</text>
-        <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
+        <text class="slogan">{{fenleilanmu3.name}}</text>
+        <view catchtap="onMoreTap" class="more" data-category="{{fenleilanmu3.name}}">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{fenleilanmu3}}" wx:for-item="itemName"wx:key="unique">
+      <block wx:for="{{fenleilanmu3.supports}}" wx:for-item="itemName"wx:key="unique">
         <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
