@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "分类栏目",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

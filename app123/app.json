@@ -7,8 +7,8 @@
     
     
     "pages/personal_center/personal_center",
-    "pages/index/movie-detail/movie-detail"
-    
+    "pages/index/movie-detail/movie-detail",
+    "pages/index/more-movie/more-movie"
   ],
   "window": {
     "backgroundTextStyle": "light",
