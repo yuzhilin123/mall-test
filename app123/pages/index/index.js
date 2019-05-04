@@ -9,6 +9,8 @@ Page({
     moreimages:{},
     inTheaters: {},
     comingSoon: {},
+    fenleilanmu3:{},
+    fenleilanmu2:{},
     top250: {},
     searchResult: {},
     containerShow: true,
@@ -49,7 +51,36 @@ Page({
         }
       }
     });
-    
+    //分类栏目2 数据
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/2', // 仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.code === 0) {
+          console.log(res.data)
+          that.setData({
+            fenleilanmu2: res.data.data
+          })
+        }
+      }
+    });
+    //分类栏目3 数据
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/3', // 仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.code === 0) {
+          console.log(res.data)
+          that.setData({
+            fenleilanmu3: res.data.data
+          })
+        }
+      }
+    });
   },
 
   onMoreTap: function (event) {

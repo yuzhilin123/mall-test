@@ -52,7 +52,7 @@
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{moreimages}}" wx:for-item="itemName">
+      <block wx:for="{{fenleilanmu2}}" wx:for-item="itemName">
       <view class="movie-container" catchtap="onMovieTap" data-movieId="{{movieId}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
@@ -74,7 +74,7 @@
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{moreimages}}" wx:for-item="itemName">
+      <block wx:for="{{fenleilanmu3}}" wx:for-item="itemName">
         <view class="movie-container" catchtap="onMovieTap" data-movieId="{{movieId}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
