@@ -44,7 +44,7 @@ Page({
       },
       success(res) {
         if (res.data.code === 0) {
-          console.log(res.data)
+          // console.log(res.data)
           that.setData({
             moreimages: res.data.data
           })
@@ -59,7 +59,7 @@ Page({
       },
       success(res) {
         if (res.data.code === 0) {
-          console.log(res.data)
+          // console.log(res.data)
           that.setData({
             fenleilanmu2: res.data.data
           })
@@ -74,7 +74,7 @@ Page({
       },
       success(res) {
         if (res.data.code === 0) {
-          console.log(res.data)
+          // console.log(res.data)
           that.setData({
             fenleilanmu3: res.data.data
           })

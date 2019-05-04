@@ -1,6 +1,6 @@
 <view>
     <swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="true" interval="5000">
-        <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName">
+        <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
         <image src="{{itemName.image}}"></image>  
         </swiper-item>
     </swiper>
@@ -31,7 +31,7 @@
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{moreimages}}" wx:for-item="itemName">
+      <block wx:for="{{moreimages}}" wx:for-item="itemName" wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-movieId="{{movieId}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
@@ -52,7 +52,7 @@
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{fenleilanmu2}}" wx:for-item="itemName">
+      <block wx:for="{{fenleilanmu2}}" wx:for-item="itemName"wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-movieId="{{movieId}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
@@ -74,7 +74,7 @@
         </view>
       </view>
       <view class="movies-container">
-      <block wx:for="{{fenleilanmu3}}" wx:for-item="itemName">
+      <block wx:for="{{fenleilanmu3}}" wx:for-item="itemName"wx:key="unique">
         <view class="movie-container" catchtap="onMovieTap" data-movieId="{{movieId}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
