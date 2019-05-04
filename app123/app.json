@@ -6,14 +6,14 @@
    
     
     
-    "pages/personal_center/personal_center"
-   
+    "pages/personal_center/personal_center",
+    "pages/index/movie-detail/movie-detail"
     
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "2222",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black" 
   },
   "tabBar": {
