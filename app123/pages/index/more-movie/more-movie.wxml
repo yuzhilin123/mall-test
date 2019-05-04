@@ -1,3 +1,14 @@
-<view>
-{{fenleilanmu}}
-</view>
+
+<!-- <view>{{movies.name}}</view> -->
+
+  <view class="grid-container">
+    <block wx:for="{{movies.supports}}" wx:for-item="item" wx:key="unique">
+      <view class="single-view-container">
+       <view class="movie-container" catchtap="onMovieTap" data-id="{{item.id}}">
+        <image class="movie-img" src="{{item.image}}"></image>
+        <text class="movie-title">{{item.title}}</text>
+        
+    </view>
+      </view>
+    </block>
+  </view>
