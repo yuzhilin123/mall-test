@@ -22,8 +22,6 @@ Page({
             navRightItems: res.data.data
           })
         }
-        
-       
       }
     })
   },

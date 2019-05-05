@@ -1,6 +1,5 @@
 // pages/movies/more-movie/more-movie.js
 var app = getApp()
-
 Page({
   data: {
     movies: {},
@@ -12,8 +11,6 @@ Page({
   onLoad: function (options) {
     var category = options.category;
     this.data.navigateTitle = category;
-    
-
     var dataUrl = "";
     switch (category) {
       case "分类栏目1":
@@ -48,13 +45,6 @@ Page({
     });
    
   },
-
-  // onScrollLower: function (event) {
-  //   var nextUrl = this.data.requestUrl +
-  //     "?start=" + this.data.totalCount + "&count=20";
-  //   util.http(nextUrl, this.processDoubanData)
-  //   wx.showNavigationBarLoading()
-  // },
 
   onReachBottom: function (event) {
     var nextUrl = this.data.requestUrl +

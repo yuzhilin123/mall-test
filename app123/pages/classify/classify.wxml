@@ -6,14 +6,15 @@
   bindconfirm="onBindConfirm"/>
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
-
-
-
-
 <!--主盒子-->
 <view class="container">
   <!--左侧栏-->
- 
+ <scroll-view
+    scroll-y="true"
+     style="flex:0 0 160rpx;"
+
+    
+  >
    <view class="nav_left">
     <block wx:for="{{navLeftItems}}" wx:key="unique">
       <!--当前项的id等于item项的id，那个就是当前状态-->
@@ -21,9 +22,12 @@
       <view class="nav_left_items {{curNav == item.index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.index}}">{{item.name}}</view>
     </block>
   </view>
-   
+    </scroll-view>
   <!--右侧栏-->
-  
+   <scroll-view
+    scroll-y="true"
+    style="flex:1;"
+  >
   <view class="nav_right">
     <!--如果有数据，才遍历项-->
     <view wx:if="{{navRightItems[curIndex].foods}}">
@@ -53,6 +57,6 @@
     <!--如果无数据，则显示数据-->
     <!-- <view wx:else>暂无数据</view> -->
   </view>
- 
+  </scroll-view>
 
  </view>
