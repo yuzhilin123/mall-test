@@ -13,7 +13,7 @@
 
 
 <view class="text_name1">
-<text>产品名称：(片碱 - 98%新疆天业)</text>
+<text style="color:red; font-size:36rpx">产品名称：{{fenleilanmu}}</text>
 
 
 </view>
