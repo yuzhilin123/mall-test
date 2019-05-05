@@ -97,8 +97,8 @@ flex:0 0 160rpx; */
   /*宽度75%，高度占满，并使用百分比布局*/
   
   height: 100%;
-  /* padding: 10px; */
-  /* box-sizing: border-box; */
+  padding: 10px; 
+  box-sizing: border-box;
   background: #fff;
 }
 /*右侧栏list的item*/

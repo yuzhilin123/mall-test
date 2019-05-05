@@ -15,7 +15,7 @@ Page({
       },
       success: function (res) {
         if(res.data.code===0){
-          // console.log(res.data.data)
+          console.log(res.data.data)
 
           that.setData({
             navLeftItems: res.data.data,
@@ -29,11 +29,13 @@ Page({
   //事件处理函数
   switchRightTab: function (e) {
     // 获取item项的id，和数组的下标值
-    let id = e.target.dataset.id,
-      index = parseInt(e.target.dataset.index);
+    // let id = e.target.dataset.name;
+    // console.log(id)
+    let  index = parseInt(e.target.dataset.index);
+    console.log(index)
     // 把点击到的某一项，设为当前index
     this.setData({
-      curNav: id,
+      // curNav:id,
       curIndex: index
     })
   }
