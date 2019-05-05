@@ -20,13 +20,13 @@ Page({
       fenleilanmu: id
     });
     wx.request({
-      url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}",
+      url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}",//详情页数据
       header: {
         'content-type': 'application/json'
       },
       success(res) {
         if (res.data.code === 0) {
-          // console.log(res.data)
+          console.log(res.data)
           that.setData({
             xinagqingyeData: res.data.data
           })

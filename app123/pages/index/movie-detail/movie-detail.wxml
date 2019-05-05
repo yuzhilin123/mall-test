@@ -1,24 +1,37 @@
-<view>
-<swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="false" interval="5000">
+<view class="container">
+<swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="false" interval="5000" class="text_name">
         <swiper-item wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
         <image src="{{itemName.image}}"></image>  
         </swiper-item>
     </swiper>
-</view>
 
 
-<view>
-<text>产品名称：{{fenleilanmu}}</text>
-<text>单位元/吨：{{fenleilanmu}}
+
+<view class="text_name1">
+<text>产品名称：(片碱 - 98%新疆天业)</text>
+<text>单位元/吨：上海仓
 </text>
 </view>
 
-<view>
+<view class="text_name2">
+<text>选择规格</text>
+<text>包装选择(如25kg厂牌塑编袋)</text>
+</view>
+
+<view class="text_name3">
 <text>商品详情</text>
 <text>评价</text>
 </view>
 
-<view>
+<view class="text_name4">
 <text>1.检测报告</text>
 <text>2.MSDS安全技术</text>
+</view>
+
+<view class="text_name5">
+<text>首页</text>
+<text>收藏</text>
+<text>加入购物车</text>
+<text>立即购买</text>
+</view>
 </view>
