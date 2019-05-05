@@ -32,13 +32,20 @@ Page({
     // let id = e.target.dataset.name;
     // console.log(id)
     let  index = parseInt(e.target.dataset.index);
-    console.log(index)
+    // console.log(index)
     // 把点击到的某一项，设为当前index
     this.setData({
       // curNav:id,
       curIndex: index
     })
-  }
+  },
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.name;
+    console.log(movieId)
+    wx.navigateTo({
+      url: "../index/movie-detail/movie-detail?id=" + movieId
+    })
+  },
 
 })
 

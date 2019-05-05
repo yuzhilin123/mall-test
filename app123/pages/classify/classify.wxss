@@ -107,13 +107,14 @@ flex:0 0 160rpx; */
   float: left;
   /*每个item设置宽度是33.33%*/
   width: 33.33%;
-  height: 80px;
+  height: 150rpx;
   text-align: center;
+  margin-bottom:50rpx;
 }
 .nav_right .nav_right_items image{
   /*被图片设置宽高*/
-  width: 50px;
-  height: 30px;
+  width: 100rpx;
+  height: 150rpx;
 }
 .nav_right .nav_right_items text{
   /*给text设成块级元素*/
