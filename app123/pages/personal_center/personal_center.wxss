@@ -1,1 +1,33 @@
 /* pages/personal_center/personal_center.wxss */
+.container{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  height:1050rpx;
+  padding:30rpx;
+  /* background:#ddd; */
+}
+.account{
+  flex:0 0 100rpx;
+}
+.count{
+  flex:0 0 100rpx;
+}
+.address{
+  flex:0 0 100rpx;
+}
+.message{
+  flex:0 0 100rpx;
+}
+.order{
+  flex:1;
+}
+.phone{
+  flex:0 0 100rpx;
+}
+.weixin{
+  flex:0 0 100rpx;
+}
+.service{
+  flex:0 0 100rpx;
+}

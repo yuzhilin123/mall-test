@@ -1,2 +1,10 @@
-<!--pages/personal_center/personal_center.wxml-->
-<text>pages/personal_center/personal_center.wxml</text>
+<view class="container">
+  <view class="account"><text>账户余额</text></view>
+  <view class="count"><text>用户积分</text></view>
+  <view class="address"><text>收货人地址</text></view>
+  <view class="message"><text>开票信息</text></view>
+  <view class="order"><text>我的订单</text></view>
+  <view class="phone"><text>绑定手机号</text></view>
+  <view class="weixin"><text>绑定微信号</text></view>
+  <view class="service"><text>在线客服</text></view>
+</view>

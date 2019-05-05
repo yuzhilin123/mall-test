@@ -1,15 +1,17 @@
 {
   "pages": [
+      "pages/personal_center/personal_center",
+    "pages/cart/cart",
     "pages/index/index",
     "pages/index/movie-detail/movie-detail",
     "pages/classify/classify",
     
     
-    "pages/cart/cart",
+   
    
     
     
-    "pages/personal_center/personal_center",
+  
     
     "pages/index/more-movie/more-movie"
   ],
