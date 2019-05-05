@@ -10,26 +10,47 @@
  .container{
    position:absolute;
    top:0;
-   bottom:200rpx;
+   bottom:100rpx;
    width:100%;
    z-index:1
    
  }
- .text_name{
-   
- }
+
  .text_name1{
-  
+  height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  margin-bottom:30rpx;
+  border:1px solid #ddd;
    
  }
  .text_name2{
-   
+    height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  margin-bottom:30rpx;
+  border:1px solid #ddd;
  }
  .text_name3{
-   
+    height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  display:flex;
+  border:1px solid #ddd;
+ }
+ .text_goods{
+   flex:1;
+ }
+ .text_rating{
+   flex:1;
+   border-left:1px solid #ddd;
  }
  .text_name4{
-   
+    height:500rpx;
+  line-height:500rpx;
+  text-align:center;
+  
+  border:1px solid #ddd;
  }
  .text_name5{
    position:absolute;

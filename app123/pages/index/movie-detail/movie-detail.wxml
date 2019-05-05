@@ -14,18 +14,23 @@
 
 <view class="text_name1">
 <text>产品名称：(片碱 - 98%新疆天业)</text>
+
+
+</view>
+
+<view class="text_name1">
+
 <text>单位元/吨：上海仓
 </text>
 </view>
-
 <view class="text_name2">
 <text>选择规格</text>
 <text>包装选择(如25kg厂牌塑编袋)</text>
 </view>
 
 <view class="text_name3">
-<text>商品详情</text>
-<text>评价</text>
+<text class="text_goods">商品详情</text>
+<text class="text_rating">评价</text>
 </view>
 
 <view class="text_name4">
