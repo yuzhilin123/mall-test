@@ -1,17 +1,11 @@
-var util = require('../../utils/util.js')
+
 var app = getApp();
 Page({
-  // RESTFul API JSON
-  // SOAP XML
-  //粒度 不是 力度
   data: {
     shouyeData:{},
     moreimages:{},
-    inTheaters: {},
-    comingSoon: {},
     fenleilanmu3:{},
     fenleilanmu2:{},
-    top250: {},
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
@@ -24,9 +18,9 @@ Page({
   onLoad: function (event) {
     var that = this
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu', // 仅为示例，并非真实的接口地址
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu', // 轮播图数据
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json' 
       },
       success(res) {
         if(res.data.code===0){
@@ -41,7 +35,7 @@ Page({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage', 
       //分类栏目1数据
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json' 
       },
       success(res) {
         if (res.data.code === 0) {
@@ -57,7 +51,7 @@ Page({
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/2', // 仅为示例，并非真实的接口地址
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json' 
       },
       success(res) {
         if (res.data.code === 0) {
@@ -70,9 +64,9 @@ Page({
     });
     //分类栏目3 数据
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/3', // 仅为示例，并非真实的接口地址
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/3', 
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json' 
       },
       success(res) {
         if (res.data.code === 0) {
@@ -97,24 +91,6 @@ Page({
     var movieId = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: "movie-detail/movie-detail?id=" + movieId
-    })
-  },
-
-  getMovieListData: function (url, settedKey, categoryTitle) {
-    var that = this;
-    wx.request({
-      url: url,
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {
-        "Content-Type": "json"
-      },
-      success: function (res) {
-        that.processDoubanData(res.data, settedKey, categoryTitle)
-      },
-      fail: function (error) {
-        // fail
-        console.log(error)
-      }
     })
   },
 

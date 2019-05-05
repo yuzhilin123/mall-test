@@ -1,4 +1,3 @@
-
  swiper{
      width:100%;
      height:400rpx;
@@ -47,7 +46,6 @@
    flex: 0 0 48rpx;
    margin-right:20rpx;
  }
-
 
 .container {
   background-color: #f2f2f2;

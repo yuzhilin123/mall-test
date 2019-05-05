@@ -1,6 +1,6 @@
 // pages/movies/more-movie/more-movie.js
 var app = getApp()
-var util = require('../../../utils/util.js')
+
 Page({
   data: {
     movies: {},

@@ -13,6 +13,7 @@
 <!--主盒子-->
 <view class="container">
   <!--左侧栏-->
+ 
    <view class="nav_left">
     <block wx:for="{{navLeftItems}}" wx:key="unique">
       <!--当前项的id等于item项的id，那个就是当前状态-->
@@ -20,7 +21,9 @@
       <view class="nav_left_items {{curNav == item.index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.index}}">{{item.name}}</view>
     </block>
   </view>
+   
   <!--右侧栏-->
+  
   <view class="nav_right">
     <!--如果有数据，才遍历项-->
     <view wx:if="{{navRightItems[curIndex].foods}}">
@@ -50,4 +53,6 @@
     <!--如果无数据，则显示数据-->
     <!-- <view wx:else>暂无数据</view> -->
   </view>
-</view>
+ 
+
+ </view>

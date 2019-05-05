@@ -18,8 +18,6 @@
   bindconfirm="onBindConfirm"/>
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
-
-
 <view class="container" >
 <view class="movie-list-container">
     <view class="inner-container">
@@ -36,12 +34,10 @@
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
       </view>
-      </block>
-       
+      </block>  
       </view>
     </view>
   </view>
-
 <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
@@ -57,13 +53,10 @@
          <image class="movie-img" src="{{itemName.image}}"></image>
         <text class="movie-title">{{itemName.title}}</text>
        </view>
-      </block>
-       
+      </block>   
       </view>
     </view>
   </view>
-
-
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
@@ -80,7 +73,6 @@
         <text class="movie-title">{{itemName.title}}</text>
        </view>
       </block>
-      
       </view>
     </view>
   </view>
