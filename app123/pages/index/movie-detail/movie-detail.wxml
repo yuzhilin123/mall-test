@@ -1,3 +1,24 @@
 <view>
-{{fenleilanmu}}
+<swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="false" interval="5000">
+        <swiper-item wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+        <image src="{{itemName.image}}"></image>  
+        </swiper-item>
+    </swiper>
+</view>
+
+
+<view>
+<text>产品名称：{{fenleilanmu}}</text>
+<text>单位元/吨：{{fenleilanmu}}
+</text>
+</view>
+
+<view>
+<text>商品详情</text>
+<text>评价</text>
+</view>
+
+<view>
+<text>1.检测报告</text>
+<text>2.MSDS安全技术</text>
 </view>

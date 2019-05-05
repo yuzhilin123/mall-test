@@ -15,7 +15,7 @@ Page({
       },
       success: function (res) {
         if(res.data.code===0){
-          console.log(res.data.data)
+          // console.log(res.data.data)
 
           that.setData({
             navLeftItems: res.data.data,
@@ -41,7 +41,7 @@ Page({
   },
   onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.name;
-    console.log(movieId)
+    // console.log(movieId)
     wx.navigateTo({
       url: "../index/movie-detail/movie-detail?id=" + movieId
     })

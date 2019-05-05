@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    xinagqingyeData:{},
     fenleilanmu:{}
   },
 
@@ -12,11 +13,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options.id)
+    let id = options.id;
+    console.log(id)
     var that = this;
     that.setData({
-      fenleilanmu: options.id
-    })
+      fenleilanmu: id
+    });
+    wx.request({
+      url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}",
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        if (res.data.code === 0) {
+          // console.log(res.data)
+          that.setData({
+            xinagqingyeData: res.data.data
+          })
+        }
+      }
+    });
   },
 
   /**
