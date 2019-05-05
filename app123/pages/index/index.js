@@ -12,7 +12,7 @@ Page({
   },
 
   onReachBottom: function (e) {
-    console.log('asdfasdfd')
+    // console.log('asdfasdfd')
   },
 
   onLoad: function (event) {
@@ -81,11 +81,15 @@ Page({
 
   onMoreTap: function (event) {
     var category = event.currentTarget.dataset.category;
-    console.log(category)
+    // console.log(category)
     wx.navigateTo({
       url: "more-movie/more-movie?category=" + category
     })
   },
+
+
+
+
 
   onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.id;
@@ -93,7 +97,7 @@ Page({
       url: "movie-detail/movie-detail?id=" + movieId
     })
   },
-
+  
   onCancelImgTap: function (event) {
     this.setData({
       containerShow: true,
@@ -116,6 +120,7 @@ Page({
     var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
     this.getMovieListData(searchUrl, "searchResult", "");
   },
+
 
   processDoubanData: function (moviesDouban, settedKey, categoryTitle) {
     var movies = [];

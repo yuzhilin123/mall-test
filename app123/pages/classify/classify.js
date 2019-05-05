@@ -39,6 +39,33 @@ Page({
       curIndex: index
     })
   },
+
+
+  onPullDownRefresh: function () {
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/classify',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        that.setData({
+          navLeftItems: res.data.data,
+          navRightItems: res.data.data
+        });
+       
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+
+
   onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.name;
     // console.log(movieId)

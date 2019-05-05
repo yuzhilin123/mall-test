@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     let id = options.id;
-    console.log(id)
+    // console.log(id)
     var that = this;
     that.setData({
       fenleilanmu: id
@@ -26,7 +26,7 @@ Page({
       },
       success(res) {
         if (res.data.code === 0) {
-          console.log(res.data)
+          // console.log(res.data)
           that.setData({
             xinagqingyeData: res.data.data
           })
