@@ -2,7 +2,7 @@
     <block wx:for="{{movies.supports}}" wx:for-item="item" wx:key="unique">
       <view class="single-view-container">
        <view class="movie-container" catchtap="onMovieTap" data-id="{{item.id}}">
-        <image class="movie-img" src="{{item.image}}"></image>
+        <image lazy-load="true" class="movie-img" src="{{item.image}}"></image>
         <text class="movie-title">￥{{item.title}}元</text> 
     </view>
       </view>

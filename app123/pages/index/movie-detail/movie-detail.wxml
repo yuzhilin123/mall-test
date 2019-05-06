@@ -6,7 +6,7 @@
   >
 <swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="false" interval="5000" class="text_name">
         <swiper-item wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
-        <image src="{{itemName.image}}"></image>  
+        <image lazy-load="true" src="{{itemName.image}}"></image>  
         </swiper-item>
     </swiper>
 

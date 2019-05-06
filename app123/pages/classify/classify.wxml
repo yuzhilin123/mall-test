@@ -33,7 +33,7 @@
         <view class="nav_right_items" catchtap="onMovieTap" data-name="{{item.name}}">
             <view>              
               <block wx:if="{{item.image}}">
-                <image src="{{item.image}}"></image>
+                <image lazy-load="true" src="{{item.image}}"></image>
               </block>
             </view>
             <view wx:if="{{item.name}}">
