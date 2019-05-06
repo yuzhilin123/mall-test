@@ -28,20 +28,20 @@
   >
   <view class="nav_right">
     <!--如果有数据，才遍历项-->
-    <view wx:if="{{navRightItems[curIndex].foods}}">
+    <block wx:if="{{navRightItems[curIndex].foods}}">
       <block wx:for="{{navRightItems[curIndex].foods}}"wx:key="unique">
         <view class="nav_right_items" catchtap="onMovieTap" data-name="{{item.name}}">
             <view>              
               <block wx:if="{{item.image}}">
-                <image lazy-load="true" src="{{item.image}}"></image>
+                <image class="movie-img" lazy-load="true" src="{{item.image}}"></image>
               </block>
             </view>
             <view wx:if="{{item.name}}">
-              <text>￥{{item.name}}元</text>
+              <text class="movie-title">￥{{item.name}}元</text>
             </view>
         </view>
       </block>
-    </view>
+    </block>
   </view>
   </scroll-view>
  </view>

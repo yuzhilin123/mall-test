@@ -154,6 +154,7 @@
 .movie-title{
     margin-bottom: 16rpx;
     font-size: 24rpx;
+    padding-left:55rpx;
 }
 .container {
   background-color: #f2f2f2;
