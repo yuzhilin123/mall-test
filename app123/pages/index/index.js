@@ -208,6 +208,9 @@ Page({
   // preventTouchMove:function(e){
   //   e.preventDefault(); 
   // },
+  move: function () {
+    
+   },
 
   onBindConfirm: function (event) {
     var text = event.detail.value;

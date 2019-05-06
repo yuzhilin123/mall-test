@@ -200,9 +200,7 @@
    flex:1;
    backgroung:red;
    color:white;
-  text-align: center;
- 
-
+   text-align: center;
 }
 .onShow{
   display:block;
