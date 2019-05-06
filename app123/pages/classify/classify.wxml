@@ -37,7 +37,7 @@
               </block>
             </view>
             <view wx:if="{{item.name}}">
-              <text>{{item.name}}</text>
+              <text>￥{{item.name}}元</text>
             </view>
         </view>
       </block>

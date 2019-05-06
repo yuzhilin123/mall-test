@@ -32,7 +32,7 @@
       <block wx:for="{{moreimages.supports}}" wx:for-item="itemName" wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
-        <text class="movie-title">{{itemName.title}}</text>
+        <text class="movie-title">￥{{itemName.title}}元</text>
       </view>
       </block>  
       </view>
@@ -51,7 +51,7 @@
       <block wx:for="{{fenleilanmu2.supports}}" wx:for-item="itemName"wx:key="unique">
       <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
-        <text class="movie-title">{{itemName.title}}</text>
+        <text class="movie-title">￥{{itemName.title}}元</text>
        </view>
       </block>   
       </view>
@@ -70,7 +70,7 @@
       <block wx:for="{{fenleilanmu3.supports}}" wx:for-item="itemName"wx:key="unique">
         <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
          <image class="movie-img" src="{{itemName.image}}"></image>
-        <text class="movie-title">{{itemName.title}}</text>
+        <text class="movie-title">￥{{itemName.title}}元</text>
        </view>
       </block>
       </view>

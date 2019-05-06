@@ -3,7 +3,7 @@
       <view class="single-view-container">
        <view class="movie-container" catchtap="onMovieTap" data-id="{{item.id}}">
         <image class="movie-img" src="{{item.image}}"></image>
-        <text class="movie-title">{{item.title}}</text> 
+        <text class="movie-title">￥{{item.title}}元</text> 
     </view>
       </view>
     </block>

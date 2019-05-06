@@ -13,7 +13,7 @@
 
 
 <view class="text_name1">
-<text style="color:red; font-size:36rpx">产品名称：{{fenleilanmu}}</text>
+<text style="color:red; font-size:36rpx">产品名称：￥{{fenleilanmu}}元</text>
 
 
 </view>

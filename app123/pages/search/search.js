@@ -37,9 +37,7 @@ Page({
   },
  
   onBindConfirm: function (event) {
-    var text = event.detail.value;
-    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
-    this.getMovieListData(searchUrl, "searchResult", "");
+ 
   },
   /**
    * 生命周期函数--监听页面加载
