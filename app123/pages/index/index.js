@@ -107,6 +107,83 @@ Page({
     )
   },
 
+  onPullDownRefresh: function () {
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        that.setData({
+          shouyeData: res.data.data
+        });
+
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    });
+    //
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        that.setData({
+          moreimages: res.data.data
+        });
+
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    });
+    //
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/2',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        that.setData({
+          fenleilanmu2: res.data.data
+        });
+
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    });
+    //
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/3',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        that.setData({
+          fenleilanmu3: res.data.data
+        });
+
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+      }
+    });
+  },
+
   onBindFocus: function (event) {
     this.setData({
       containerShow: false,
