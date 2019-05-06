@@ -101,7 +101,7 @@ page{
   /*宽度75%，高度占满，并使用百分比布局*/
   width:100%;
   height: 100%;
-  padding: 20rpx; 
+  padding: 20rpx 20rpx 20rpx 60rpx; 
   box-sizing: border-box;
   background: #fff;
   display:flex;
@@ -112,6 +112,7 @@ page{
 .nav_right .nav_right_items{
  
   flex:1;
+  margin-bottom: 16rpx;
 
 
 }
