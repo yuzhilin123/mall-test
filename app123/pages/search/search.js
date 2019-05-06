@@ -6,6 +6,8 @@ Page({
    */
   data: {
     searchPanelShow: false,
+    inputShowed:false,
+    inputVal:""
     // containerShow: false,
     
   },
@@ -26,7 +28,14 @@ Page({
     })
 
   },
+  onbindblur: function (event) {
+    this.setData({
+      // containerShow: false,
+      searchPanelShow: false
+    })
 
+  },
+ 
   onBindConfirm: function (event) {
     var text = event.detail.value;
     var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
@@ -36,21 +45,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      inputShowed: true
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
