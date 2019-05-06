@@ -42,7 +42,12 @@ Page({
       curIndex: index
     })
   },
+  onBindFocus: function (event) {
+    wx.navigateTo({
+      url: "../search/search"
+    })
 
+  },
 
  
 

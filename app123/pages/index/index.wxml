@@ -16,7 +16,7 @@
   <input type="text" placeholder="搜索商品" 
   placeholder-class="placeholder" bindfocus="onBindFocus"
   bindconfirm="onBindConfirm"/>
-  <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
+  <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image> -->
 </view>
 <view class="container" >
 <view class="movie-list-container">

@@ -185,9 +185,8 @@ Page({
   },
 
   onBindFocus: function (event) {
-    this.setData({
-      containerShow: false,
-      searchPanelShow: true
+    wx.navigateTo({
+      url: "../search/search"
     })
 
   },
