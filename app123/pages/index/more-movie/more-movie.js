@@ -7,6 +7,7 @@ Page({
     requestUrl: "",
     totalCount: 0,
     isEmpty: true,
+    dataUr:""
   },
   onLoad: function (options) {
     var category = options.category;
@@ -23,6 +24,11 @@ Page({
         dataUrl = 'http://rap2api.taobao.org/app/mock/167390/index/3';
         break;
     }
+    // console.log(dataUrl)
+    var that = this;
+    that.setData({
+      dataUr: dataUrl
+    })
     wx.setNavigationBarTitle({
       title: this.data.navigateTitle
     })
@@ -45,30 +51,7 @@ Page({
     });
    
   },
-  onPullDownRefresh: function () {
-    // 显示顶部刷新图标
-    wx.showNavigationBarLoading();
-    var that = this;
-    wx.request({
-      url: dataUrl,
-      method: "GET",
-      header: {
-        'content-type': 'application/text'
-      },
-      success: function (res) {
-        console.log(res.data)
-        that.setData({
-          movies: res.data.data
-        });
-
-        // 隐藏导航栏加载框
-        wx.hideNavigationBarLoading();
-        // 停止下拉动作
-        wx.stopPullDownRefresh();
-
-      }
-    });
-  },
+  
   onReachBottom: function (event) {
     var nextUrl = this.data.requestUrl +
       "?start=" + this.data.totalCount + "&count=20";
@@ -76,52 +59,9 @@ Page({
     wx.showNavigationBarLoading()
   },
 
-  onPullDownRefresh: function (event) {
-    var refreshUrl = this.data.requestUrl +
-      "?star=0&count=20";
-    this.data.movies = {};
-    this.data.isEmpty = true;
-    this.data.totalCount = 0;
-    util.http(refreshUrl, this.processDoubanData);
-    wx.showNavigationBarLoading();
-  },
+ 
 
-  processDoubanData: function (moviesDouban) {
-    var movies = [];
-    for (var idx in moviesDouban.subjects) {
-      var subject = moviesDouban.subjects[idx];
-      var title = subject.title;
-      if (title.length >= 6) {
-        title = title.substring(0, 6) + "...";
-      }
-      // [1,1,1,1,1] [1,1,1,0,0]
-      var temp = {
-        stars: util.convertToStarsArray(subject.rating.stars),
-        title: title,
-        average: subject.rating.average,
-        coverageUrl: subject.images.large,
-        movieId: subject.id
-      }
-      movies.push(temp)
-    }
-    var totalMovies = {}
-
-    //如果要绑定新加载的数据，那么需要同旧有的数据合并在一起
-    if (!this.data.isEmpty) {
-      totalMovies = this.data.movies.concat(movies);
-    }
-    else {
-      totalMovies = movies;
-      this.data.isEmpty = false;
-    }
-    this.setData({
-      movies: totalMovies
-    });
-
-    this.data.totalCount += 20;
-    wx.hideNavigationBarLoading();
-    wx.stopPullDownRefresh()
-  },
+  
 
   onReady: function (event) {
     wx.setNavigationBarTitle({
@@ -135,4 +75,5 @@ Page({
       url: '../movie-detail/movie-detail?id=' + movieId
     })
   },
+  
 })

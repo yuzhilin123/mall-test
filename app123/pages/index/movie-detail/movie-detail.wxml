@@ -1,4 +1,4 @@
-
+<view>
 <view class="container">
  <scroll-view
     scroll-y="true"
@@ -47,4 +47,5 @@
 <text class="text_item2">收藏</text>
 <text class="text_item3">加入购物车</text>
 <text class="text_item4">立即购买</text>
+</view>
 </view>
