@@ -43,7 +43,7 @@
 
 
 <view class="text_name5">
-<text class="text_item1">首页</text>
+<text class="text_item1"catchtap="goShouye">首页</text>
 <text class="text_item2">收藏</text>
 <text class="text_item3">加入购物车</text>
 <text class="text_item4">立即购买</text>
