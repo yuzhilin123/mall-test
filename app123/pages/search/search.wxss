@@ -22,3 +22,9 @@
   color: #d1d1d1;
   margin-left: 20rpx;
 }
+
+.xx-img{
+    height: 30rpx;
+    width: 30rpx;
+    margin:auto 0 auto 10rpx;
+}

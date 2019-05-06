@@ -5,9 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
+    searchPanelShow: false,
+    // containerShow: false,
+    
+  },
+
+  onCancelImgTap: function (event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {}
+    }
+    )
+  },
+
+  onBindFocus: function (event) {
+    this.setData({
+      // containerShow: false,
+      searchPanelShow: true
+    })
 
   },
 
+  onBindConfirm: function (event) {
+    var text = event.detail.value;
+    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+    this.getMovieListData(searchUrl, "searchResult", "");
+  },
   /**
    * 生命周期函数--监听页面加载
    */
