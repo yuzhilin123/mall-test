@@ -1,4 +1,4 @@
-
+<view>
 <view class="search">
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
   <input type="text" placeholder="搜索商品" 
@@ -44,4 +44,5 @@
     </view>
   </view>
   </scroll-view>
+ </view>
  </view>

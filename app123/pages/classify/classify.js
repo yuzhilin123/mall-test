@@ -5,6 +5,9 @@ Page({
     curNav: 1,
     curIndex: 0
   },
+  onReachBottom: function (e) {
+    // console.log('asdfasdfd')
+  },
   onLoad: function () {
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象
     var that = this
@@ -52,17 +55,19 @@ Page({
         'content-type': 'application/text'
       },
       success: function (res) {
+        console.log(res.data)
         that.setData({
           navLeftItems: res.data.data,
           navRightItems: res.data.data
         });
-       
+        
         // 隐藏导航栏加载框
         wx.hideNavigationBarLoading();
         // 停止下拉动作
         wx.stopPullDownRefresh();
+        
       }
-    })
+    });
   },
 
 

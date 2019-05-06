@@ -67,7 +67,28 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}',
+      method: "GET",
+      header: {
+        'content-type': 'application/text'
+      },
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          xinagqingyeData: res.data.data
+        });
 
+        // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // 停止下拉动作
+        wx.stopPullDownRefresh();
+
+      }
+    });
   },
 
   /**
