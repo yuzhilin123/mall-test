@@ -9,7 +9,7 @@ Page({
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
-    isShow:false
+    isShowed:false
   },
 
   onReachBottom: function (e) {
@@ -79,6 +79,9 @@ Page({
       }
     });
   },
+  onShow: function () {
+   
+  },
 
   onMoreTap: function (event) {
     var category = event.currentTarget.dataset.category;
@@ -89,7 +92,16 @@ Page({
   },
 
 
-
+  onShowed: function (event) {
+    this.setData({
+      isShowed: true
+    })
+  },
+  onHideed: function (event) {
+    this.setData({
+      isShowed: false
+    })
+  },
 
 
   onMovieTap: function (event) {
@@ -98,16 +110,7 @@ Page({
       url: "movie-detail/movie-detail?id=" + movieId
     })
   },
-  onShow: function (event) {
-    this.setData({
-      isShow: true
-    })
-  },
-  onHide: function (event) {
-    this.setData({
-      isShow: false
-    })
-  },
+
   
   onCancelImgTap: function (event) {
     this.setData({
@@ -201,6 +204,7 @@ Page({
     })
 
   },
+ 
   // preventTouchMove:function(e){
   //   e.preventDefault(); 
   // },
