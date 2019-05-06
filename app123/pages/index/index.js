@@ -9,6 +9,7 @@ Page({
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
+    isShow:false
   },
 
   onReachBottom: function (e) {
@@ -95,6 +96,16 @@ Page({
     var movieId = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: "movie-detail/movie-detail?id=" + movieId
+    })
+  },
+  onShow: function (event) {
+    this.setData({
+      isShow: true
+    })
+  },
+  onHide: function (event) {
+    this.setData({
+      isShow: false
     })
   },
   
@@ -190,6 +201,9 @@ Page({
     })
 
   },
+  // preventTouchMove:function(e){
+  //   e.preventDefault(); 
+  // },
 
   onBindConfirm: function (event) {
     var text = event.detail.value;

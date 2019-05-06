@@ -158,3 +158,55 @@
 .container {
   background-color: #f2f2f2;
 }
+.container_1{
+  position:relative;
+  z-index:1
+}
+.dialog{
+  position:absolute;
+  z-index: 2;
+  background:grey;
+  top:0;
+  left:0;right:0;
+  bottom:0;
+  opacity:0.5;
+}
+.dialog_t{
+   position:fixed;
+   left:50%;
+   top:50%;
+   transform:translate(-50%,-50%);
+  z-index: 999;
+  width:600rpx;
+  height:400rpx;
+  display:flex;
+  flex-direction: column;
+  background:#ffffff;
+}
+.text1{
+  flex:1;
+  backgroung:red;
+  color:white;
+  text-align: center;
+ 
+}
+.text2{
+   flex:1;
+   backgroung:red;
+   text-align: center;
+  
+}
+.text3{
+   flex:1;
+   backgroung:red;
+   color:white;
+  text-align: center;
+ 
+
+}
+.onShow{
+  display:block;
+}
+.onHide{
+  display:none;
+}
