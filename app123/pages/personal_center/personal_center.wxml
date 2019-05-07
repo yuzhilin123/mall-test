@@ -18,17 +18,28 @@
     <image class="avatar" src="{{userInfo.faceImage}}"></image>
     <view class="user-words">
         <view class="nickname">{{userInfo.nickname}}</view>
-        <view class="ico-block">
+        <!-- <view class="ico-block">
             <image src="/resources/icon/smallIco/vip.png" class="vipcard-ico"/>
             <block a:if="{{userInfo.isCertified == 1}}">
                 <image src="/resources/icon/smallIco/certified.png" class="certified-ico"/>
             </block>    
-        </view>
+        </view> -->
     </view>
-    <image class="set-ico" src="/resources/icon/smallIco/settings.png" onTap="logout"></image>
+    <image class="set-ico" src="../../images/icon/logout.png" onTap="logout"></image>
 </view>
 
+<view class="money_container">
+  <view class="money">
+    <image class="money_ico" src="../../images/icon/yue.png"></image>
+    <text class="money_account">账户余额</text>
+  </view>
+  <view class="score">
+    <text class="score_1">0</text>
+    <text class="score_2">积分</text>
+  </view>
+</view>
 <!-- 我的订单 -->
+<view><text>我的订单</text></view>
 <view class="order-tab">
 
     <view class="every-status" onTap="queryOrder" data-orderIndex="0" data-orderStatus="0">        
