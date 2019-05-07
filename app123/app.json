@@ -1,8 +1,9 @@
 {
   "pages": [
+    
       "pages/personal_center/personal_center",
     "pages/index/movie-detail/movie-detail",
-    "pages/index/index",
+   "pages/index/index",
     
     
     
