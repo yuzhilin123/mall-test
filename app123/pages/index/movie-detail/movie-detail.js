@@ -6,7 +6,9 @@ Page({
    */
   data: {
     xinagqingyeData:{},
-    showPrice:{}
+    showPrice:{},
+    likeHidden:true,
+    unlikeHidden: false
   },
   goShouye: function (event) {
     wx.switchTab({

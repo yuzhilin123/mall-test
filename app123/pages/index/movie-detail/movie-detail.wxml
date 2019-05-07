@@ -41,12 +41,37 @@
  </scroll-view>
 </view>
 
+<view class="bottom-operator">
+     <view class="like-img" catchtap="goShouye">
+        <image src="../../../images/tab/index.png" class="like-ico" />
+        <view class="like-words" onTap="">首页</view>
+    </view>
+    <view class="like-img" catchtap="likeItem">
+        <image src="../../../images/icon/unlike.png" class="like-ico"hidden="{{unlikeHidden}}" />
+        <view class="like-words" onTap="">收藏</view>
+    </view>
+ <view class="like-img" catchtap="unlikeItem" hidden="{{likeHidden}}">
+        <image src="../../../images/icon/like.png" class="like-ico" />
+        <view class="like-words">取消收藏</view>
+    </view>
+    <view class="like-img" catchtap="likeItem" >
+        <image src="../../../images/tab/cart.png" class="like-ico" />
+        <view class="like-words">购物车</view>
+    </view>
 
-<view class="text_name5">
-<text class="text_item1"catchtap="goShouye">首页</text>
-<text class="text_item2">收藏</text>
-<text class="text_item2">购物车</text>
-<text class="text_item3">加入购物车</text>
-<text class="text_item4">立即购买</text>
+        
+   
+
+    <view class="add-to-cart" onTap="addToCart">
+        <!-- 定义动画组件，创建实例 -->
+        <view animation="{{animationInfo}}"  class="animation-img"
+            style="opacity:{{animationOpacity}}; background-image: url('{{headerImagesArr[0]}}');"
+        >
+        </view>
+        放入购物车
+    </view>
+    <view class="buy-me" onTap="buyMe">购买</view>
+
+
 </view>
 </view>
