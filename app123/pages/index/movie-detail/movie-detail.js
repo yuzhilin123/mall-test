@@ -6,7 +6,7 @@ Page({
    */
   data: {
     xinagqingyeData:{},
-    fenleilanmu:{}
+    showPrice:{}
   },
   goShouye: function (event) {
     wx.switchTab({
@@ -22,7 +22,7 @@ Page({
     
     var that = this;
     that.setData({
-      fenleilanmu: id
+      showPrice: id
     });
     wx.request({
       url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}",//详情页数据

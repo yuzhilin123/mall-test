@@ -13,7 +13,7 @@
 
 
 <view class="text_name1">
-<text style="color:red; font-size:36rpx">产品名称：￥{{fenleilanmu}}元</text>
+<text style="color:red; font-size:36rpx">产品名称：￥{{showPrice}}元</text>
 
 
 </view>
@@ -44,7 +44,7 @@
 
 <view class="text_name5">
 <text class="text_item1"catchtap="goShouye">首页</text>
-<text class="text_item2">收藏</text>
+<text class="text_item2">购物车</text>
 <text class="text_item3">加入购物车</text>
 <text class="text_item4">立即购买</text>
 </view>
