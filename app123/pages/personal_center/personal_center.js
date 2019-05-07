@@ -17,6 +17,14 @@ Page({
       url: '../logs/logs'
     })
   },
+  logout:function(){
+    var that=this;
+    that.setData({
+      userInfo: null,
+      hasUserInfo: false
+    })
+   
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

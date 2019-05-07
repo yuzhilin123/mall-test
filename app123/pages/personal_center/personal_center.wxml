@@ -25,13 +25,13 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 请登录 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <image class="set-ico" src="../../images/icon/logout.png" onTap="logout"></image>
+  <image class="set-ico" src="../../images/icon/logout.png" catchtap="logout"></image>
 </view>
 
 
@@ -48,7 +48,7 @@
   </view>
 </view>
 <!-- 我的订单 -->
-<view><text>我的订单</text></view>
+<view style="padding-left:60rpx;height:50rpx;line-height:50rpx;"><text  >我的订单</text></view>
 <view class="order-tab">
 
     <view class="every-status" onTap="queryOrder" data-orderIndex="0" data-orderStatus="0">        
