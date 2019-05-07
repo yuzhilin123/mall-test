@@ -1,5 +1,38 @@
+/**index.wxss**/
+.container{
+  display: flex;
+  justify-content: space-between;
+     align-items: center;
+}
+.userinfo {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40rpx;
+}
 
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
 
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.set-ico {
+     
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 40rpx;
+    
+}
 /* 用户未登录 start */
 .login-block {
     background-color: white;
@@ -55,12 +88,7 @@
     width: 101rpx;
     height: 64rpx;
 }
-.set-ico {
-    width: 40rpx;
-    height: 40rpx;
-    margin-top: 12rpx;
-    
-}
+
 /* end */
 
 /* 历史订单切换tab */

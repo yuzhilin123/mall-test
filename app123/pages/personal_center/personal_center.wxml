@@ -9,24 +9,33 @@
   <view class="service"><text>在线客服</text></view>
 </view> -->
 <!-- 用户未登录的时候显示 -->
-<view class="login-block" hidden="{{userLogin}}">
-    <view class="btn-login" onTap="login">请登录</view>
-</view>
+<!-- <view class="login-block" hidden="{{userLogin}}">
+    <view class="btn-login" bindgetuserinfo="getUserInfo" open-type="getUserInfo">请登录</view>
+</view> -->
 
 <!-- 个人信息 用户已登录后显示 -->
-<view class="userinfo" hidden="{{userNotLogin}}">
-    <image class="avatar" src="{{userInfo.faceImage}}"></image>
+<!-- <view class="userinfo" hidden="{{userNotLogin}}">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
     <view class="user-words">
         <view class="nickname">{{userInfo.nickname}}</view>
-        <!-- <view class="ico-block">
-            <image src="/resources/icon/smallIco/vip.png" class="vipcard-ico"/>
-            <block a:if="{{userInfo.isCertified == 1}}">
-                <image src="/resources/icon/smallIco/certified.png" class="certified-ico"/>
-            </block>    
-        </view> -->
+     
     </view>
-    <image class="set-ico" src="../../images/icon/logout.png" onTap="logout"></image>
+   
+</view> -->
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <image class="set-ico" src="../../images/icon/logout.png" onTap="logout"></image>
 </view>
+
+
+
 
 <view class="money_container">
   <view class="money">
