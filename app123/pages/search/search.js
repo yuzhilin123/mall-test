@@ -42,7 +42,7 @@ Page({
     var itemName = e.detail.value;
     //直接查询 发起请求
     wx.navigateTo({
-      url: "/pages/query/list/list?searchType=words&itemName=" + itemName
+      url: "search_result/search_result"
     });
   },
   /**

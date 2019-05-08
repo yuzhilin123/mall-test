@@ -11,7 +11,7 @@
     "pages/classify/classify",
   
     "pages/cart/cart",
-    
+    "pages/search/search_result/search_result",
     "pages/index/more-movie/more-movie"
   ],
   "window": {
