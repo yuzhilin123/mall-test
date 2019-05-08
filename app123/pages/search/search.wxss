@@ -50,14 +50,16 @@
 .htrItemContent {
   flex: 1;
   font-size: 30rpx;
-  position: relative;
   width: 100%;
-  /* height:600rpx; */
+  height:600rpx;
+  /* background: red; */
+  position:relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 20rpx;
   padding-right: 20rpx;
+
 }
 
 .htrItem {
@@ -69,8 +71,8 @@
 }
 
 .noHistoryItem {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform: translate(-50%,-50%)
 }
