@@ -1,38 +1,32 @@
 /* pages/classify/classify.wxss */
+
 .search {
   background-color: #f2f2f2;
-  height:100rpx;
- 
+  height: 100rpx;
   display: flex;
   flex-direction: row;
-  width:100%;
-  
+  width: 100%;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
-
-.search_container{
-  width:90%;
-  height:70%;
-  line-height:72rpx;
-  background:white;
-   display: flex; 
-    /* justify-content: center; */
-  /* align-items: center */
+.search_container {
+  width: 90%;
+  height: 70%;
+  line-height: 72rpx;
+  background: white;
+  display: flex;
+  /* justify-content: center; *//* align-items: center */
 }
+
 .search-img {
-
   /* padding:20rpx 20rpx 20rpx 20rpx; */
- margin: 18rpx 20rpx 20rpx 30rpx;
+  margin: 18rpx 20rpx 20rpx 30rpx;
 }
+
 .search-text {
-
-  
   /* width: 600rpx; */
-
   font-size: 28rpx;
- 
 }
 
 .placeholder {
@@ -45,47 +39,50 @@
   margin-bottom: 30rpx;
 }
 
-.search-panel{
-    position:absolute;
-    top:580rpx;
+.search-panel {
+  position: absolute;
+  top: 580rpx;
 }
 
-.xx-img{
-    height: 30rpx;
-    width: 30rpx;
-    margin:auto 0 auto 10rpx;
+.xx-img {
+  height: 30rpx;
+  width: 30rpx;
+  margin: auto 0 auto 10rpx;
 }
 
-page{
+page {
   background: #f5f5f5;
 }
+
 /*总体主盒子*/
+
 .container {
   position: absolute;
   width: 100%;
-  top:100rpx;
-  left:0;
-  right:0;
-  bottom:1rpx;
+  top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 1rpx;
   /* height: 100%; */
   background-color: #fff;
   color: #939393;
-  display:flex;
+  display: flex;
 }
- 
+
 /*左侧栏主盒子*/
-.nav_left{
+
+.nav_left {
   /*设置行内块级元素（没使用定位）*/
   width: 160rpx;
-     
   overflow: hidden;
- flex:0 0 160rpx;
-
+  flex: 0 0 160rpx;
   background: #f5f5f5;
   text-align: center;
 }
+
 /*左侧栏list的item*/
-.nav_left .nav_left_items{
+
+.nav_left .nav_left_items {
   /*每个高30px*/
   height: 60rpx;
   /*垂直居中*/
@@ -97,41 +94,43 @@ page{
   /*文字14px*/
   font-size: 28rpx;
 }
+
 /*左侧栏list的item被选中时*/
-.nav_left .nav_left_items.active{
+
+.nav_left .nav_left_items.active {
   /*背景色变成白色*/
   background: #fff;
 }
- 
+
 /*右侧栏主盒子*/
-.nav_right{
+
+.nav_right {
   /*右侧盒子使用了绝对定位*/
-  
   flex: 1;
   /*宽度75%，高度占满，并使用百分比布局*/
-  width:100%;
+  width: 100%;
   height: 100%;
-  padding: 20rpx 20rpx 20rpx 60rpx; 
+  padding: 20rpx 20rpx 20rpx 60rpx;
   box-sizing: border-box;
   background: #fff;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
-
 }
+
 /*右侧栏list的item*/
-.nav_right .nav_right_items{
- 
-  flex:1;
+
+.nav_right .nav_right_items {
+  flex: 1;
   margin-bottom: 16rpx;
-
-
 }
-.movie-img{
+
+.movie-img {
   width: 200rpx;
-  height:270rpx;
+  height: 270rpx;
 }
-.movie-title{
-    margin-bottom: 16rpx;
-    font-size: 24rpx;
-    padding-left:55rpx;
+
+.movie-title {
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  padding-left: 55rpx;
 }

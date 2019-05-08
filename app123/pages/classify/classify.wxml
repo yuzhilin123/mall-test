@@ -1,51 +1,45 @@
 <view>
-<view class="search" catchtap="onBindFocus">
-<view class="search_container">
-    <icon type="search" class="search-img" size="13" color="#405f80"></icon>
-  
-  <text class="search-text">请输入您要搜索的内容...</text>
-</view>
-  
+  <view class="search" catchtap="onBindFocus">
+    <view class="search_container">
+      <icon type="search" class="search-img" size="13" color="#405f80"></icon>
 
-  <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image> -->
-</view>
-<!--主盒子-->
-<view class="container">
-  <!--左侧栏-->
- <scroll-view
-    scroll-y="true"
-     style="flex:0 0 160rpx;"
-  >
-   <view class="nav_left">
-    <block wx:for="{{navLeftItems}}" wx:key="unique"wx:for-item="item">
-      <!--当前项的id等于item项的id，那个就是当前状态-->
-      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-      <view class="nav_left_items {{curIndex == index ? 'active' : ''}}" bindtap="switchRightTab"data-index="{{index}}" data-name="{{item.name}}" >{{item.name}}</view>
-    </block>
+      <text class="search-text">请输入您要搜索的内容...</text>
+    </view>
+
+
+    <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image> -->
   </view>
+  <!--主盒子-->
+  <view class="container">
+    <!--左侧栏-->
+    <scroll-view scroll-y="true" style="flex:0 0 160rpx;">
+      <view class="nav_left">
+        <block wx:for="{{navLeftItems}}" wx:key="unique" wx:for-item="item">
+          <!--当前项的id等于item项的id，那个就是当前状态-->
+          <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+          <view class="nav_left_items {{curIndex == index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-name="{{item.name}}">{{item.name}}</view>
+        </block>
+      </view>
     </scroll-view>
-  <!--右侧栏-->
-   <scroll-view
-    scroll-y="true"
-    style="flex:1;"
-  >
-  <view class="nav_right">
-    <!--如果有数据，才遍历项-->
-    <block wx:if="{{navRightItems[curIndex].foods}}">
-      <block wx:for="{{navRightItems[curIndex].foods}}"wx:key="unique">
-        <view class="nav_right_items" catchtap="onMovieTap" data-name="{{item.name}}">
-            <view>              
-              <block wx:if="{{item.image}}">
-                <image class="movie-img" lazy-load="true" src="{{item.image}}"></image>
-              </block>
+    <!--右侧栏-->
+    <scroll-view scroll-y="true" style="flex:1;">
+      <view class="nav_right">
+        <!--如果有数据，才遍历项-->
+        <block wx:if="{{navRightItems[curIndex].foods}}">
+          <block wx:for="{{navRightItems[curIndex].foods}}" wx:key="unique">
+            <view class="nav_right_items" catchtap="onMovieTap" data-name="{{item.name}}">
+              <view>
+                <block wx:if="{{item.image}}">
+                  <image class="movie-img" lazy-load="true" src="{{item.image}}"></image>
+                </block>
+              </view>
+              <view wx:if="{{item.name}}">
+                <text class="movie-title">￥{{item.name}}元</text>
+              </view>
             </view>
-            <view wx:if="{{item.name}}">
-              <text class="movie-title">￥{{item.name}}元</text>
-            </view>
-        </view>
-      </block>
-    </block>
+          </block>
+        </block>
+      </view>
+    </scroll-view>
   </view>
-  </scroll-view>
- </view>
- </view>
+</view>

@@ -1,22 +1,18 @@
 <view class="search">
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
-  <input type="text"  placeholder="请输入您要搜索的内容..." 
-  placeholder-class="placeholder" focus="{{inputShowed}}" value="{{inputVal}}" bindfocus="onBindFocus"
-  bindconfirm="onBindConfirm" bindblur="onbindblur"/>
+  <input type="text" placeholder="请输入您要搜索的内容..." placeholder-class="placeholder" focus="{{inputShowed}}" value="{{inputVal}}" bindfocus="onBindFocus" bindconfirm="onBindConfirm" bindblur="onbindblur" />
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
 
 <view class='historyContent'>
-    <view class='title'>
-      <h>历史搜索</h>
-      <image src='../../images/icon/delete.png' class='deleteIcon' bindtap='historyDelFn' ></image>
-    </view>
-    <view class='htrItemContent'>
-      <block wx:for="{{searchRecord}}" wx:key='{{item}}' >
-        <view class='htrItem'catchtap="gohistory">{{item.value}}</view>
-      </block> 
-      <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view>
-    </view>
+  <view class='title'>
+    <h>历史搜索</h>
+    <image src='../../images/icon/delete.png' class='deleteIcon' bindtap='historyDelFn'></image>
   </view>
-
-
+  <view class='htrItemContent'>
+    <block wx:for="{{searchRecord}}" wx:key='{{item}}'>
+      <view class='htrItem' catchtap="gohistory">{{item.value}}</view>
+    </block>
+    <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view>
+  </view>
+</view>

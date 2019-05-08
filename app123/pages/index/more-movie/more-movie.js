@@ -7,9 +7,9 @@ Page({
     requestUrl: "",
     totalCount: 0,
     isEmpty: true,
-    dataUr:""
+    dataUr: ""
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.showLoading({
       title: '加载中',
     })
@@ -36,7 +36,7 @@ Page({
       title: this.data.navigateTitle
     })
     // this.data.requestUrl = dataUrl;
-     var that=this;
+    var that = this;
     wx.request({
       url: dataUrl, // 仅为示例，并非真实的接口地址
       header: {
@@ -48,38 +48,38 @@ Page({
           that.setData({
             movies: res.data.data
           })
-          
+
         }
       },
       complete() {
         wx.hideLoading()
       }
     });
-   
+
   },
-  
-  onReachBottom: function (event) {
+
+  onReachBottom: function(event) {
     var nextUrl = this.data.requestUrl +
       "?start=" + this.data.totalCount + "&count=20";
     util.http(nextUrl, this.processDoubanData)
     wx.showNavigationBarLoading()
   },
 
- 
 
-  
 
-  onReady: function (event) {
+
+
+  onReady: function(event) {
     wx.setNavigationBarTitle({
       title: this.data.navigateTitle
     })
   },
 
-  onMovieTap: function (event) {
+  onMovieTap: function(event) {
     var movieId = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../movie-detail/movie-detail?id=' + movieId
     })
   },
-  
+
 })

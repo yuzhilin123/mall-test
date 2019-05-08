@@ -1,77 +1,72 @@
 <view>
-<view class="container">
- <scroll-view
-    scroll-y="true"
-     style="height:100%"
-  >
-<swiper catchtap="onSwiperTap"  indicator-dots="true" autoplay="false" interval="5000" class="text_name">
+  <view class="container">
+    <scroll-view scroll-y="true" style="height:100%">
+      <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="false" interval="5000" class="text_name">
         <swiper-item wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
-        <image lazy-load="true" src="{{itemName.image}}"></image>  
+          <image lazy-load="true" src="{{itemName.image}}"></image>
         </swiper-item>
-    </swiper>
+      </swiper>
 
 
 
-<view class="text_name1">
-<text style="color:red; font-size:36rpx">产品名称：￥{{showPrice}}元</text>
+      <view class="text_name1">
+        <text style="color:red; font-size:36rpx">产品名称：￥{{showPrice}}元</text>
 
 
-</view>
+      </view>
 
-<view class="text_name1">
+      <view class="text_name1">
 
-<text>单位元/吨：上海仓
+        <text>单位元/吨：上海仓
 </text>
-</view>
-<view class="text_name2">
-<text>选择规格</text>
-<text>包装选择(如25kg厂牌塑编袋)</text>
-</view>
+      </view>
+      <view class="text_name2">
+        <text>选择规格</text>
+        <text>包装选择(如25kg厂牌塑编袋)</text>
+      </view>
 
-<view class="text_name3">
-<text class="text_goods">商品详情</text>
-<text class="text_rating">评价</text>
-</view>
+      <view class="text_name3">
+        <text class="text_goods">商品详情</text>
+        <text class="text_rating">评价</text>
+      </view>
 
-<view class="text_name4">
-<text>1.检测报告</text>
-<text>2.MSDS安全技术</text>
-</view>
+      <view class="text_name4">
+        <text>1.检测报告</text>
+        <text>2.MSDS安全技术</text>
+      </view>
 
- </scroll-view>
-</view>
+    </scroll-view>
+  </view>
 
-<view class="bottom-operator">
-     <view class="like-img" catchtap="goShouye">
-        <image src="../../../images/tab/index.png" class="like-ico" />
-        <view class="like-words" onTap="">首页</view>
+  <view class="bottom-operator">
+    <view class="like-img" catchtap="goShouye">
+      <image src="../../../images/tab/index.png" class="like-ico" />
+      <view class="like-words" onTap="">首页</view>
     </view>
     <view class="like-img" catchtap="likeItem">
-        <image src="../../../images/icon/unlike.png" class="like-ico"hidden="{{unlikeHidden}}" />
-        <view class="like-words" onTap="">收藏</view>
+      <image src="../../../images/icon/unlike.png" class="like-ico" hidden="{{unlikeHidden}}" />
+      <view class="like-words" onTap="">收藏</view>
     </view>
- <view class="like-img" catchtap="unlikeItem" hidden="{{likeHidden}}">
-        <image src="../../../images/icon/like.png" class="like-ico" />
-        <view class="like-words">取消收藏</view>
+    <view class="like-img" catchtap="unlikeItem" hidden="{{likeHidden}}">
+      <image src="../../../images/icon/like.png" class="like-ico" />
+      <view class="like-words">取消收藏</view>
     </view>
-    <view class="like-img" catchtap="likeItem" >
-        <image src="../../../images/tab/cart.png" class="like-ico" />
-        <view class="like-words">购物车</view>
+    <view class="like-img" catchtap="likeItem">
+      <image src="../../../images/tab/cart.png" class="like-ico" />
+      <view class="like-words">购物车</view>
     </view>
 
-        
-   
+
+
 
     <view class="add-to-cart" onTap="addToCart">
-        <!-- 定义动画组件，创建实例 -->
-        <view animation="{{animationInfo}}"  class="animation-img"
-            style="opacity:{{animationOpacity}}; background-image: url('{{headerImagesArr[0]}}');"
-        >
-        </view>
-        放入购物车
+      <!-- 定义动画组件，创建实例 -->
+      <view animation="{{animationInfo}}" class="animation-img" style="opacity:{{animationOpacity}}; background-image: url('{{headerImagesArr[0]}}');">
+      </view>
+      放入购物车
     </view>
     <view class="buy-me" onTap="buyMe">购买</view>
 
 
-</view>
+  </view>
 </view>

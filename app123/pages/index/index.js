@@ -1,22 +1,21 @@
-
 var app = getApp();
 Page({
   data: {
-    shouyeData:{},
-    moreimages:{},
-    fenleilanmu3:{},
-    fenleilanmu2:{},
+    shouyeData: {},
+    moreimages: {},
+    fenleilanmu3: {},
+    fenleilanmu2: {},
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
-    isShowed:false
+    isShowed: false
   },
 
-  onReachBottom: function (e) {
+  onReachBottom: function(e) {
     // console.log('asdfasdfd')
   },
 
-  onLoad: function (event) {
+  onLoad: function(event) {
     wx.showLoading({
       title: '加载中',
     })
@@ -24,26 +23,26 @@ Page({
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu', // 轮播图数据
       header: {
-        'content-type': 'application/json' 
+        'content-type': 'application/json'
       },
       success(res) {
-        if(res.data.code===0){
+        if (res.data.code === 0) {
           // console.log(res.data)
           that.setData({
             shouyeData: res.data.data
           })
         }
       },
-        complete() {
+      complete() {
         wx.hideLoading()
       }
 
     });
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage', 
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage',
       //分类栏目1数据
       header: {
-        'content-type': 'application/json' 
+        'content-type': 'application/json'
       },
       success(res) {
         if (res.data.code === 0) {
@@ -51,7 +50,7 @@ Page({
           that.setData({
             moreimages: res.data.data
           })
-          
+
         }
       }
     });
@@ -59,7 +58,7 @@ Page({
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/2', // 仅为示例，并非真实的接口地址
       header: {
-        'content-type': 'application/json' 
+        'content-type': 'application/json'
       },
       success(res) {
         if (res.data.code === 0) {
@@ -72,9 +71,9 @@ Page({
     });
     //分类栏目3 数据
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/3', 
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/3',
       header: {
-        'content-type': 'application/json' 
+        'content-type': 'application/json'
       },
       success(res) {
         if (res.data.code === 0) {
@@ -86,11 +85,11 @@ Page({
       }
     });
   },
-  onShow: function () {
-   
+  onShow: function() {
+
   },
 
-  onMoreTap: function (event) {
+  onMoreTap: function(event) {
     var category = event.currentTarget.dataset.category;
     // console.log(category)
     wx.navigateTo({
@@ -99,36 +98,35 @@ Page({
   },
 
 
-  onShowed: function (event) {
+  onShowed: function(event) {
     this.setData({
       isShowed: true
     })
   },
-  onHideed: function (event) {
+  onHideed: function(event) {
     this.setData({
       isShowed: false
     })
   },
 
 
-  onMovieTap: function (event) {
+  onMovieTap: function(event) {
     var movieId = event.currentTarget.dataset.id;
     wx.navigateTo({
       url: "movie-detail/movie-detail?id=" + movieId
     })
   },
 
-  
-  onCancelImgTap: function (event) {
+
+  onCancelImgTap: function(event) {
     this.setData({
       containerShow: true,
       searchPanelShow: false,
       searchResult: {}
-    }
-    )
+    })
   },
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
     wx.showLoading({
@@ -141,7 +139,7 @@ Page({
       header: {
         'content-type': 'application/text'
       },
-      success: function (res) {
+      success: function(res) {
         that.setData({
           shouyeData: res.data.data
         });
@@ -162,7 +160,7 @@ Page({
       header: {
         'content-type': 'application/text'
       },
-      success: function (res) {
+      success: function(res) {
         that.setData({
           moreimages: res.data.data
         });
@@ -180,7 +178,7 @@ Page({
       header: {
         'content-type': 'application/text'
       },
-      success: function (res) {
+      success: function(res) {
         that.setData({
           fenleilanmu2: res.data.data
         });
@@ -198,7 +196,7 @@ Page({
       header: {
         'content-type': 'application/text'
       },
-      success: function (res) {
+      success: function(res) {
         that.setData({
           fenleilanmu3: res.data.data
         });
@@ -211,21 +209,21 @@ Page({
     });
   },
 
-  onBindFocus: function (event) {
+  onBindFocus: function(event) {
     wx.navigateTo({
       url: "../search/search"
     })
 
   },
- 
+
   // preventTouchMove:function(e){
   //   e.preventDefault(); 
   // },
-  move: function () {
-    
-   },
+  move: function() {
 
-  onBindConfirm: function (event) {
+  },
+
+  onBindConfirm: function(event) {
     var text = event.detail.value;
     var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
     this.getMovieListData(searchUrl, "searchResult", "");

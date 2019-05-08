@@ -2,18 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/search/search",
-     
-      
-   
- 
-      "pages/personal_center/personal_center",
+    "pages/personal_center/personal_center",
+    "pages/personal_center/order/order",
     "pages/index/movie-detail/movie-detail",
- 
-    
-    
-    
     "pages/classify/classify",
-  
     "pages/cart/cart",
     "pages/search/search_result/search_result",
     "pages/index/more-movie/more-movie"
@@ -22,7 +14,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black" 
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "borderStyle": "white",

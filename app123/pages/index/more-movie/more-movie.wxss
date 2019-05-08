@@ -1,13 +1,15 @@
 /*scroll-view*/
-.single-view-container{
-    float:left;
-    margin-bottom: 40rpx;
+
+.single-view-container {
+  float: left;
+  margin-bottom: 40rpx;
 }
 
-.grid-container{
-    height: 1300rpx;
-    margin:40rpx 0 40rpx 6rpx;
+.grid-container {
+  height: 1300rpx;
+  margin: 40rpx 0 40rpx 6rpx;
 }
+
 .movie-container {
   display: flex;
   flex-direction: column;
@@ -20,8 +22,8 @@
   padding-bottom: 20rpx;
 }
 
-.movie-title{
-    margin-bottom: 16rpx;
-    font-size: 24rpx;
-    padding-left:55rpx;
+.movie-title {
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  padding-left: 55rpx;
 }

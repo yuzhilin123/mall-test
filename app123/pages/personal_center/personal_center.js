@@ -1,7 +1,5 @@
-//index.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -12,20 +10,24 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function () {
+  bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  logout:function(){
-    var that=this;
+  logout: function() {
+    var that = this;
     that.setData({
       userInfo: null,
       hasUserInfo: false
     })
-   
   },
-  onLoad: function () {
+  goOrder:function(){
+    wx.navigateTo({
+      url: "order/order",
+    })
+  },
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -53,7 +55,7 @@ Page({
       })
     }
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     // console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
