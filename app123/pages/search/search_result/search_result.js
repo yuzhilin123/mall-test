@@ -78,6 +78,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../../index/movie-detail/movie-detail?id=' + movieId
+    })
+  },
   onShareAppMessage: function () {
 
   }
