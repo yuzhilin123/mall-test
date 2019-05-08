@@ -8,7 +8,9 @@ Page({
     xinagqingyeData: {},
     showPrice: {},
     likeHidden: true,
-    unlikeHidden: false
+    unlikeHidden: false,
+    animationInfo: {},
+    animationOpacity: 1
   },
   goShouye: function(event) {
     wx.switchTab({
@@ -59,7 +61,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var animation = wx.createAnimation();
+    this.setData({
+      // 导出动画效果到页面
+      animationInfo: animation.export()
+    });
   },
 
 

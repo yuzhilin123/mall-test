@@ -97,3 +97,19 @@ swiper image {
   font-size: 16px;
   line-height: 100rpx;
 }
+.animation-img {
+    margin-top: 29rpx;
+    margin-left: 93rpx;
+    height: 35rpx;
+    width: 35rpx;
+    border: solid 2px;
+    border-color: #ff679a;
+    border-radius: 15px; 
+
+    /* 背景图填满view */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    /* 绝对定位 漂浮起来 */
+    position:absolute;
+}
