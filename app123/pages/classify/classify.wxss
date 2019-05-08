@@ -1,28 +1,36 @@
 /* pages/classify/classify.wxss */
 .search {
   background-color: #f2f2f2;
-  height: 80rpx;
+  height:100rpx;
  
   display: flex;
   flex-direction: row;
-  border-radius: 15rpx;
-  line-height:80rpx;
-  border:1px solid #ccc;
-  /* margin:10rpx 20rpx 10rpx 10rpx; */
+  width:100%;
+  
+  justify-content: center;
+  align-items: center
 }
 
 .search-img {
-  margin: 15rpx 5rpx 10rpx 40rpx;
- 
+  
+  padding:20rpx 20rpx 20rpx 20rpx;
 }
+.search_container{
+  width:90%;
+  height:70%;
+  line-height:72rpx;
+  background:white;
 
+
+}
 .search-text {
-   border-left:1px solid #ddd;
+ 
   height: 100%;
   width: 600rpx;
-  margin-left: 20px;
+ position:relative;
+ top:-5rpx;
   font-size: 28rpx;
-  padding-left:30rpx;
+ 
 }
 
 .placeholder {
@@ -53,7 +61,7 @@ page{
 .container {
   position: absolute;
   width: 100%;
-  top:84rpx;
+  top:100rpx;
   left:0;
   right:0;
   bottom:1rpx;

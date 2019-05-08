@@ -12,9 +12,12 @@
 </view>
 </view>
 <view class="search" catchtap="onBindFocus">
-  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+<view class="search_container">
+    <icon type="search" class="search-img" size="13" color="#405f80"></icon>
   
   <text class="search-text">请输入您要搜索的内容...</text>
+</view>
+  
 
   <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image> -->
 </view>

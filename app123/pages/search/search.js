@@ -36,8 +36,14 @@ Page({
 
   },
  
-  onBindConfirm: function (event) {
-      
+  onBindConfirm: function (e) {
+      console.log(e)
+      // debugger;
+    var itemName = e.detail.value;
+    //直接查询 发起请求
+    wx.navigateTo({
+      url: "/pages/query/list/list?searchType=words&itemName=" + itemName
+    });
   },
   /**
    * 生命周期函数--监听页面加载

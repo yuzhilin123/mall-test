@@ -1,16 +1,17 @@
 {
   "pages": [
-    
+      "pages/index/index",
+    "pages/search/search",
       "pages/personal_center/personal_center",
     "pages/index/movie-detail/movie-detail",
-   "pages/index/index",
+ 
     
     
     
     "pages/classify/classify",
   
     "pages/cart/cart",
-    "pages/search/search",
+    
     "pages/index/more-movie/more-movie"
   ],
   "window": {
