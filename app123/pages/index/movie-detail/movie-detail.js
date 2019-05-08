@@ -96,7 +96,7 @@ Page({
     // translateX 在水平轴上移动
     // this.animation.translateX("296rpx").step();
     // 旋转的同时，又在水平轴上移动
-    this.animation.rotate(-180).translateX("80px").step();
+    this.animation.rotate(-180).translateX("128px").step();
 
     this.setData({
       // 导出动画效果到页面

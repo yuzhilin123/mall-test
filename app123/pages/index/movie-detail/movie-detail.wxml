@@ -43,6 +43,10 @@
       <image src="../../../images/tab/index.png" class="like-ico" />
       <view class="like-words" onTap="">首页</view>
     </view>
+     <view class="like-img" catchtap="likeItem">
+      <image src="../../../images/tab/cart.png" class="like-ico" />
+      <view class="like-words">购物车</view>
+    </view>
     <view class="like-img" catchtap="likeItem">
       <image src="../../../images/icon/unlike.png" class="like-ico" hidden="{{unlikeHidden}}" />
       <view class="like-words" onTap="">收藏</view>
@@ -51,10 +55,7 @@
       <image src="../../../images/icon/like.png" class="like-ico" />
       <view class="like-words">取消收藏</view>
     </view>
-    <view class="like-img" catchtap="likeItem">
-      <image src="../../../images/tab/cart.png" class="like-ico" />
-      <view class="like-words">购物车</view>
-    </view>
+   
     <view class="add-to-cart" catchtap="addToCart">
       <!-- 定义动画组件，创建实例 -->
       <view animation="{{animationInfo}}" class="animation-img" style="opacity:{{animationOpacity}}; background: red;">
