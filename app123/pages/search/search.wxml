@@ -5,3 +5,16 @@
   bindconfirm="onBindConfirm" bindblur="onbindblur"/>
   <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
 </view>
+
+<view class='historyContent'>
+    <view class='title'>
+      <h>历史搜索</h>
+      <image src='../../images/icon/delete.png' class='deleteIcon' bindtap='historyDelFn' ></image>
+    </view>
+    <view class='htrItemContent'>
+      <block wx:for="{{searchRecord}}" wx:key='{{item}}'>
+        <view class='htrItem'>{{item.value}}</view>
+      </block> 
+      <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view>
+    </view>
+  </view>

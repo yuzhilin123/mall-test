@@ -7,7 +7,8 @@ Page({
   data: {
     searchPanelShow: false,
     inputShowed:false,
-    inputVal:""
+    inputVal:"",
+    searchRecord: []
     // containerShow: false,
     
   },
@@ -37,19 +38,59 @@ Page({
   },
  
   onBindConfirm: function (e) {
-      console.log(e)
+     
       // debugger;
-    var itemName = e.detail.value;
+    var inputVal = e.detail.value;
+    var searchRecord = this.data.searchRecord
+    if (inputVal == '') {
+      //输入为空时的处理
+    }
+    else {
+      //将搜索值放入历史记录中,只能放前五条
+      if (searchRecord.length < 5) {
+        searchRecord.unshift(
+          {
+            value: inputVal,
+            id: searchRecord.length
+          }
+        )
+      }
+      else {
+        searchRecord.pop()//删掉旧的时间最早的第一条
+        searchRecord.unshift(
+          {
+            value: inputVal,
+            id: searchRecord.length
+          }
+        )
+      }
+      //将历史记录数组整体储存到缓存中
+      wx.setStorageSync('searchRecord', searchRecord)
+    }
+
+  
     //直接查询 发起请求
     wx.navigateTo({
-      url: "search_result/search_result"
+      url: "search_result/search_result?inputVal=" + inputVal
     });
+  },
+  openHistorySearch: function () {
+    this.setData({
+      searchRecord: wx.getStorageSync('searchRecord') || [],//若无储存则为空
+    })
+  },
+  historyDelFn: function () {
+    wx.clearStorageSync('searhRecord')
+    this.setData({
+      searchRecord: []
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
+    this.openHistorySearch()
   },
 
   /**
@@ -65,7 +106,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.openHistorySearch()
   },
 
   /**
