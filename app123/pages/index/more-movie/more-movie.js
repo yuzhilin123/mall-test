@@ -10,6 +10,9 @@ Page({
     dataUr:""
   },
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var category = options.category;
     this.data.navigateTitle = category;
     var dataUrl = "";
@@ -47,6 +50,9 @@ Page({
           })
           
         }
+      },
+      complete() {
+        wx.hideLoading()
       }
     });
    

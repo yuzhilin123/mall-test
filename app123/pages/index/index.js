@@ -17,6 +17,9 @@ Page({
   },
 
   onLoad: function (event) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu', // 轮播图数据
@@ -30,7 +33,11 @@ Page({
             shouyeData: res.data.data
           })
         }
+      },
+        complete() {
+        wx.hideLoading()
       }
+
     });
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage', 
@@ -124,6 +131,9 @@ Page({
   onPullDownRefresh: function () {
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     wx.request({
       url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu',
@@ -140,6 +150,9 @@ Page({
         wx.hideNavigationBarLoading();
         // 停止下拉动作
         wx.stopPullDownRefresh();
+      },
+      complete() {
+        wx.hideLoading()
       }
     });
     //
