@@ -63,24 +63,26 @@
   align-items: center
 }
 
-.search-img {
-  
-  padding:20rpx 20rpx 20rpx 20rpx;
-}
+
 .search_container{
   width:90%;
   height:70%;
   line-height:72rpx;
   background:white;
+   display: flex; 
+    /* justify-content: center; */
+  /* align-items: center */
+}
+.search-img {
 
-
+  /* padding:20rpx 20rpx 20rpx 20rpx; */
+ margin: 18rpx 20rpx 20rpx 30rpx;
 }
 .search-text {
- 
-  height: 100%;
-  width: 600rpx;
- position:relative;
- top:-5rpx;
+
+  
+  /* width: 600rpx; */
+
   font-size: 28rpx;
  
 }
