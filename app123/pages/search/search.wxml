@@ -12,9 +12,11 @@
       <image src='../../images/icon/delete.png' class='deleteIcon' bindtap='historyDelFn' ></image>
     </view>
     <view class='htrItemContent'>
-      <block wx:for="{{searchRecord}}" wx:key='{{item}}'>
-        <view class='htrItem'>{{item.value}}</view>
+      <block wx:for="{{searchRecord}}" wx:key='{{item}}' >
+        <view class='htrItem'catchtap="gohistory">{{item.value}}</view>
       </block> 
       <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view>
     </view>
   </view>
+
+

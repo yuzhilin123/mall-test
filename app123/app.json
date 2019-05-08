@@ -1,7 +1,8 @@
 {
   "pages": [
-      "pages/search/search",
       "pages/index/index",
+      "pages/search/search",
+   
  
       "pages/personal_center/personal_center",
     "pages/index/movie-detail/movie-detail",

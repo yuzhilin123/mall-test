@@ -13,11 +13,24 @@ Page({
    */
   onLoad: function (options) {
     let itemName = options.inputVal;
-    console.log(itemName)
-   var that=this;
-    that.setData({
-      showName: itemName
+    var that = this
+    wx.request({
+      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage', // 轮播图数据
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        if (res.data.code === 0) {
+          // console.log(res.data)
+          that.setData({
+            showName: res.data.data
+          })
+        }
+      }
     });
+
+    
+   
   },
 
   /**
