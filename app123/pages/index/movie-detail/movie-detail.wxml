@@ -55,7 +55,7 @@
       <image src="../../../images/tab/cart.png" class="like-ico" />
       <view class="like-words">购物车</view>
     </view>
-    <view class="add-to-cart" onTap="addToCart">
+    <view class="add-to-cart" catchtap="addToCart">
       <!-- 定义动画组件，创建实例 -->
       <view animation="{{animationInfo}}" class="animation-img" style="opacity:{{animationOpacity}}; background: red;">
       </view>
