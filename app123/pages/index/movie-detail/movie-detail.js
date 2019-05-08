@@ -1,4 +1,5 @@
 // pages/personal_center/personal_center.js
+const app = getApp();
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     xinagqingyeData: {},
-    showPrice: {},
+    item: '',
     likeHidden: true,
     unlikeHidden: false,
     animationInfo: {},
@@ -17,7 +18,12 @@ Page({
       url: "../../index/index"
     })
   },
-
+  gotoCart: function (event) {
+    wx.switchTab({
+      url: "../../cart/cart"
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,10 +32,10 @@ Page({
       title: '加载中',
     })
     let id = options.id;
-
-    var that = this;
-    that.setData({
-      showPrice: id
+    
+    var me = this;
+    me.setData({
+      item: id
     });
     wx.request({
       url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}", //详情页数据
@@ -39,7 +45,7 @@ Page({
       success(res) {
         if (res.data.code === 0) {
           // console.log(res.data)
-          that.setData({
+          me.setData({
             xinagqingyeData: res.data.data
           })
         }
@@ -80,8 +86,49 @@ Page({
 
 
     // 商品id存入缓存购物车
-    // var itemId = me.data.item.id;
-    // me.cartItemIncrease(itemId);
+    var itemId = me.data.item;
+    console.log(typeof (itemId))
+    me.cartItemIncrease(itemId);
+  },
+  // 商品放入购物车
+  cartItemIncrease(itemId) {
+    var me = this;
+
+    // 获取购物车的缓存数组（没有数据，则赋予一个空数组）  
+    var cartItemIdArray = wx.getStorageSync('cartItemIdArray') || [];  
+
+  
+
+    // 定义标识用于判断购物车缓存中是否含有当前页的商品
+    var isItemAdded = false;
+    for (var i = 0; i < cartItemIdArray.length; i++) {
+      var item = cartItemIdArray[i];
+      if (item != null && item != undefined && item.itemId == itemId) {
+        // 删除原来的item
+        cartItemIdArray.splice(i, 1);
+        // 商品counts累加1
+        var counts = item.counts + 1;
+        // 重新构建商品对象
+        var cartItemNew = app.cartItem(itemId, counts);
+        cartItemIdArray.push(cartItemNew);
+        isItemAdded = true;
+        break;
+      }
+    }
+
+    // 在没有添加过当前商品的时候，新创建一个对象放入数组
+    if (!isItemAdded) {
+      // 构建新的商品对象
+      var cartItem = app.cartItem(itemId, 1);
+      // 把这个商品对象放入购物车
+      cartItemIdArray.push(cartItem);
+    }
+
+    // 把cartItemIdArray存入缓存
+    wx.setStorageSync({
+      key: 'cartItemIdArray', // 缓存数据的key
+      data: 'cartItemIdArray', // 要缓存的数据
+    });
   },
   // 实现动画效果
   showAddToCartAnimation() {
