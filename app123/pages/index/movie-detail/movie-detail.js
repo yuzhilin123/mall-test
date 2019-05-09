@@ -130,7 +130,8 @@ Page({
       key: 'cartItemIdArray', // 缓存数据的key
       data: cartItemIdArray // 要缓存的数据
     });
-   
+    
+    var cartItemIdArray = wx.getStorageSync('cartItemIdArray')
   },
   
   // 实现动画效果

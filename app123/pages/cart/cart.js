@@ -23,7 +23,10 @@ Page({
     // 预处理订单数据列表
     preOrderItemList: [],
   },
-  onLoad() { },
+  onLoad() { 
+    var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
+    debugger
+  },
 
   // 跳转到首页
   helpYourself(e) {
@@ -51,9 +54,8 @@ Page({
     });
 
     // 从缓存中拿到购物车数组对象
-    var cartItemIdArray = wx.getStorage({
-      key: 'cartItemIdArray', // 缓存数据的key
-    });
+  
+    var cartItemIdArray = wx.getStorageSync('cartItemIdArray'); 
     // 判断cartItemIdArray是否为空，如果不为空，则到后台接口查询商品数据
     if (cartItemIdArray != null && cartItemIdArray != undefined) {
       me.setData({
@@ -234,7 +236,7 @@ Page({
 
     var totalAmount = me.data.totalAmount;
     if (totalAmount <= 0) {
-      my.alert({
+      wx.alert({
         title: '温馨提示',
         content: "请至少选择一项商品再去结算",
         buttonText: "知道了！",
@@ -248,7 +250,7 @@ Page({
 
       // TODO: 购买商品之前需要判断当前用户是否登录
       wx.navigateTo({
-        url: "/pages/orders/confrimOrder/confrimOrder"
+        url: ""
       });
     }
   },
