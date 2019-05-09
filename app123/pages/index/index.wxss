@@ -172,58 +172,68 @@ swiper image {
 }
 
 .container_1 {
-  position: relative;
-  z-index: 1;
+  /* position: relative;
+  z-index: 1; */
 }
 
 .dialog {
-  position: absolute;
-  z-index: 2;
-  background: grey;
+  position: fixed;
+  z-index: 99;
+  background: black;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.5;
+  width:100%;
+  height:100%;
+  opacity: .6;
+ 
 }
 
 .dialog_t {
-  position: fixed;
+  position: absolute;
+  z-index: 888;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
+  top:50%;
+  transform: translate(-50%,-50%);
   width: 600rpx;
-  height: 400rpx;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+  height: 500rpx;
+  /* display: flex;
+  flex-direction: column; */
+  background: #ffffff;
+  
 }
-
+.container_2{
+  padding:50rpx;
+}
 .text1 {
-  flex: 1;
-  backgroung: red;
+  
+  background: #fe4642;
   color: white;
   text-align: center;
+  height:120rpx;
+  line-height:120rpx;
 }
 
 .text2 {
-  flex: 1;
-  backgroung: red;
+ 
+ 
   text-align: center;
 }
 
 .text3 {
-  flex: 1;
-  backgroung: red;
-  color: white;
+  margin-top: 30rpx;
+  background: #fe4642;
+  
   text-align: center;
+  width:100%;
+  height:100rpx;
+  line-height: 100rpx;
+  
 }
 
-.onShow {
+/* .onShow {
   display: block;
 }
 
 .onHide {
   display: none;
-}
+} */

@@ -83,16 +83,19 @@
 
 
 <view class="dialog" wx:if="{{isShowed}}" catchtouchmove="move">
-
 </view>
+
 <view class="dialog_t" wx:if="{{isShowed}}">
   <view class="text1">
-    <text>公告</text>
+    <text style='color:white;font-size:30rpx;'>公告</text>
   </view>
-  <view class="text2">
-    <text>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+  <view class="container_2">
+    <view class="text2">
+    <text style='font-size:30rpx;'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
   </view>
   <view class="text3" catchtap="onHideed">
-    <text>我知道了</text>
+    <text style='color: white;font-size:30rpx;'>我知道了</text>
   </view>
-</view>
+  </view>
+  
+  </view>
