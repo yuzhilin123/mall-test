@@ -51,7 +51,7 @@ Page({
     });
 
     // 从缓存中拿到购物车数组对象
-    var cartItemIdArray = wx.getStorageSync({
+    var cartItemIdArray = wx.getStorage({
       key: 'cartItemIdArray', // 缓存数据的key
     });
     // 判断cartItemIdArray是否为空，如果不为空，则到后台接口查询商品数据

@@ -11,18 +11,18 @@
 
 <view class="full" hidden="{{fullHidden}}">
 
-    <block a:for="{{finalCartItemList}}" a:for-item="item">
+    <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
 
             <view class="cart-line">
 
                     <view class="item-radio">
-                        <block a:if="{{item.isSelect == 1}}">
+                        <block wx:if="{{item.isSelect == 1}}">
                                 <image src="../../images/icon/{{customSelectImg}}.png" class="select-ico" 
-                                                onTap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
+                                                catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
                         </block>
-                        <block a:else>
+                        <block wx:else>
                                 <image src="../../images/icon/{{customUnSelectImg}}.png" class="select-ico" 
-                                                onTap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
+                                                catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
                         </block>
                         
                     </view>
@@ -54,7 +54,7 @@
 <!-- 底部结算操作栏 -->
 <view class="bottom-settlement" hidden="{{fullHidden}}">
 
-    <view class="sel-all-block" onTap="checkAllBox">
+    <view class="sel-all-block" catchtap="checkAllBox">
         <image src="../../images/icon/{{allSelectImg}}.png" class="select-ico" />
         <view class="sel-all-words">全选</view>
     </view>
