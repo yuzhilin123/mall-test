@@ -23,9 +23,8 @@ Page({
     // 预处理订单数据列表
     preOrderItemList: [],
   },
-  onLoad() { 
+  onLoad() {
     var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
-    debugger
   },
 
   // 跳转到首页
@@ -54,8 +53,9 @@ Page({
     });
 
     // 从缓存中拿到购物车数组对象
-  
-    var cartItemIdArray = wx.getStorageSync('cartItemIdArray'); 
+
+    var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
+    
     // 判断cartItemIdArray是否为空，如果不为空，则到后台接口查询商品数据
     if (cartItemIdArray != null && cartItemIdArray != undefined) {
       me.setData({
@@ -78,13 +78,14 @@ Page({
 
       // 请求接口，查询商品详情
       wx.request({
-        url: app.serverUrl + '/item/queryItems?itemIds=' + itemIds,
+        url: 'http://rap2api.taobao.org/app/mock/167390/index/gocart?itemIds=' + itemIds,
+        
         method: 'POST',
         header: {
           'content-type': 'application/json'
         },
         dataType: 'json',
-        success: function (res) {
+        success: function(res) {
           console.log(res);
           // 获取拿到后端的数据
           var myData = res.data;
@@ -97,7 +98,7 @@ Page({
               var itemId = itemList[i].id;
               // 根据itemId从缓存购物车中获取商品的件数
               var itemCounts = app.fetchItemCounts(cartItemIdArray, itemId);
-              var isSelect = 0;       // 默认未选中：0   选中：1
+              var isSelect = 0; // 默认未选中：0   选中：1
               // 构建全局不可变商品
               var finalCartItem = app.finalCartItem(itemList[i], itemCounts, isSelect);
               // 不可变商品列表，用于结算
@@ -108,15 +109,15 @@ Page({
             });
           }
         },
-        complete: function (res) {
+        complete: function(res) {
           wx.hideNavigationBarLoading();
           wx.hideLoading();
         }
       });
     }
-
+   
   },
-
+ 
   // 用户单机触发的checkbox事件
   touchItem(e) {
     var me = this;
