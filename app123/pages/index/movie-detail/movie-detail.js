@@ -87,7 +87,7 @@ Page({
 
     // 商品id存入缓存购物车
     var itemId = me.data.item;
-    console.log(typeof (itemId))
+   
     me.cartItemIncrease(itemId);
   },
   // 商品放入购物车
@@ -125,11 +125,14 @@ Page({
     }
 
     // 把cartItemIdArray存入缓存
-    wx.setStorageSync({
+   
+    wx.setStorage({
       key: 'cartItemIdArray', // 缓存数据的key
-      data: 'cartItemIdArray', // 要缓存的数据
+      data: cartItemIdArray // 要缓存的数据
     });
+   
   },
+  
   // 实现动画效果
   showAddToCartAnimation() {
     // 创建动画
