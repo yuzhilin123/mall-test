@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/classify/classify",
     "pages/cart/cart",
     "pages/index/index",
     "pages/index/movie-detail/movie-detail",
@@ -8,7 +9,7 @@
     "pages/personal_center/personal_center",
     "pages/personal_center/order/order",
    
-    "pages/classify/classify",
+    
     
     "pages/search/search_result/search_result",
     "pages/index/more-movie/more-movie"
