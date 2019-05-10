@@ -2,10 +2,7 @@ const app = getApp();
 
 Page({
   data: {
-    items: [
-     
-      { name: '平台自营', value: '平台自营', checked: 'true' },
-    ],
+   
     emptyHidden: false,
     fullHidden: true,
 

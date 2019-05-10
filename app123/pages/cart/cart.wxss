@@ -1,18 +1,23 @@
 .container{
    display: flex;
+   padding-left:20rpx;
+   align-items: center;
   background-color: #f2f5f8;
   height:100rpx;
+  line-height:100rpx;
   /* padding:20rpx; */
 }
-.radio-group{
-flex:1;
-margin:30rpx 0 0 30rpx;
-}
-.text_2{
-flex:0 0 80rpx;
-font-size:36rpx;
-margin:30rpx 30rpx 0 0;
 
+.text_1{
+  font-size:30rpx;
+
+margin-left:10rpx;
+}
+.select-ico1{
+
+  width: 40rpx;
+    height: 40rpx;
+  
 }
 page {
   display: flex;
@@ -121,6 +126,7 @@ page {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right:10rpx;
 }
 .cart-item-img {
     width: 150rpx;

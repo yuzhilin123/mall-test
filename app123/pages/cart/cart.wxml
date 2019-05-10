@@ -1,13 +1,12 @@
-<view class="container" hidden="{{fullHidden}}">
-
-    <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio" wx:for="{{items}}">
-        <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
-      </label>
-    </radio-group>
-
-    <text class="text_2" catchtap="deleteled" >清空</text>
+<view class="container" >
+   
+        <image src="../../images/icon/unselect.png" class="select-ico1" catchtap="touchItem"  />
+        <text class='text_1'>平台自营</text>
+   
+    
   </view>
+
+
 <view class="empty" hidden="{{emptyHidden}}">
 
   <image src="../../images/icon/goshopping.png" class="goshopping-img" />
