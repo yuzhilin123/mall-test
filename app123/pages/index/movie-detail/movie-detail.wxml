@@ -1,16 +1,16 @@
 <view>
-  <view class="container">
+  <view class="container" wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
     <scroll-view scroll-y="true" style="height:100%">
       <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="false" interval="5000" class="text_name">
-        <swiper-item wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
-          <image lazy-load="true" src="{{itemName.image}}"></image>
+        <swiper-item >
+          <image lazy-load="true" src="{{itemName.coverList[0]}}"></image>
         </swiper-item>
       </swiper>
 
 
 
       <view class="text_name1">
-        <text style="color:red; font-size:36rpx">产品名称：￥{{item}}元</text>
+        <text style="color:red; font-size:36rpx">产品名称：￥{{itemName.priceNormalYuan}}元</text>
 
 
       </view>

@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     navLeftItems: [],
@@ -15,10 +16,11 @@ Page({
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象
     var that = this
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/classify',
+      url: "http://rap2api.taobao.org/app/mock/167390/index/classify",
       header: {
         'Accept': 'application/json'
       },
+      // method: 'POST',
       success: function(res) {
         if (res.data.code === 0) {
           // console.log(res.data.data)

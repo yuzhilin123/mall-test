@@ -45,7 +45,7 @@ Page({
 
       allSelectImg: "unselect",
       defaultSelectedAll: false,
-
+      
       // 默认的合计金额
       totalAmount: 0,
       // 默认的结算件数
@@ -78,7 +78,7 @@ Page({
 
       // 请求接口，查询商品详情
       wx.request({
-        url: 'http://rap2api.taobao.org/app/mock/167390/index/gocart?itemIds=' + itemIds,
+        url: app.serverUrl + '/item/queryItems?itemIds=' + itemIds,
         
         method: 'POST',
         header: {
@@ -86,7 +86,7 @@ Page({
         },
         dataType: 'json',
         success: function(res) {
-          console.log(res);
+         
           // 获取拿到后端的数据
           var myData = res.data;
           if (myData.status == 200) {

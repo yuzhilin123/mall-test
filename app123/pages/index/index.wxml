@@ -1,7 +1,7 @@
 <view class="container_1">
   <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
-      <image lazy-load="true" src="{{itemName.image}}"></image>
+      <image lazy-load="true" src="{{itemName.imageUrl}}"></image>
     </swiper-item>
   </swiper>
   <view class="text_container" catchtap="onShowed">
@@ -25,17 +25,17 @@
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">{{moreimages.name}}</text>
+        <text class="slogan">{{moreimages.name}}新品</text>
         <view catchtap="onMoreTap" class="more" data-category="{{moreimages.name}}">
           <text class="more-text">更多</text>
           <image lazy-load="true" class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-        <block wx:for="{{moreimages.supports}}" wx:for-item="itemName" wx:key="unique">
+        <block wx:for="{{moreimages}}" wx:for-item="itemName" wx:key="unique">
           <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
-            <image lazy-load="true" class="movie-img" src="{{itemName.image}}"></image>
-            <text class="movie-title">￥{{itemName.title}}元</text>
+            <image lazy-load="true" class="movie-img" src="{{itemName.coverList[0]}}"></image>
+            <text class="movie-title">￥{{itemName.priceNormalYuan}}元</text>
           </view>
         </block>
       </view>
@@ -44,17 +44,17 @@
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">{{fenleilanmu2.name}}</text>
+        <text class="slogan">{{fenleilanmu2.name}}推荐</text>
         <view catchtap="onMoreTap" class="more" data-category="{{fenleilanmu2.name}}">
           <text class="more-text">更多</text>
           <image lazy-load="true" class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="movies-container">
-        <block wx:for="{{fenleilanmu2.supports}}" wx:for-item="itemName" wx:key="unique">
+        <block wx:for="{{fenleilanmu2}}" wx:for-item="itemName" wx:key="unique">
           <view class="movie-container" catchtap="onMovieTap" data-id="{{itemName.id}}">
-            <image lazy-load="true" class="movie-img" src="{{itemName.image}}"></image>
-            <text class="movie-title">￥{{itemName.title}}元</text>
+            <image lazy-load="true" class="movie-img" src="{{itemName.coverList[0]}}"></image>
+            <text class="movie-title">￥{{itemName.priceNormalYuan}}元</text>
           </view>
         </block>
       </view>

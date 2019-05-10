@@ -1,75 +1,73 @@
 <view class="empty" hidden="{{emptyHidden}}">
-    
-    <image src="../../images/icon/goshopping.png" class="goshopping-img" />
-    <view class="empty-words">购物车为空</view>
 
-    <view class="help-yourself-outter">
-        <view class="help-yourself-words" catchtap="helpYourself">随便逛一下</view>
-    </view>
+  <image src="../../images/icon/goshopping.png" class="goshopping-img" />
+  <view class="empty-words">购物车为空</view>
+
+  <view class="help-yourself-outter">
+    <view class="help-yourself-words" catchtap="helpYourself">随便逛一下</view>
+  </view>
 
 </view>
 
 <view class="full" hidden="{{fullHidden}}">
 
-    <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
+  <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
 
-            <view class="cart-line">
+    <view class="cart-line">
 
-                    <view class="item-radio">
-                        <block wx:if="{{item.isSelect == 1}}">
-                                <image src="../../images/icon/{{customSelectImg}}.png" class="select-ico" 
-                                                catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
-                        </block>
-                        <block wx:else>
-                                <image src="../../images/icon/{{customUnSelectImg}}.png" class="select-ico" 
-                                                catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}"/>
-                        </block>
-                        
-                    </view>
+      <view class="item-radio">
+        <block wx:if="{{item.isSelect == 1}}">
+          <image src="../../images/icon/{{customSelectImg}}.png" class="select-ico" catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}" />
+        </block>
+        <block wx:else>
+          <image src="../../images/icon/{{customUnSelectImg}}.png" class="select-ico" catchtap="touchItem" data-itemInfo="{{item.item.id}},{{item.counts}}" />
+        </block>
 
-                    <view>
-                        <image src="{{item.item.cover}}" class="cart-item-img"/>
-                    </view>
+      </view>
 
-                    <view class="item-block">
-                            <view class="item-title">
-                                    {{item.item.name}}
-                            </view>
-                            <view class="price-tag">
-                                    <view class="item-price">
-                                        ￥{{item.item.priceDiscountYuan}}
-                                    </view>
-                                    <view>
-                                        X {{item.counts}}
-                                    </view>
-                            </view>
-                    </view>
+      <view>
+        <image src="{{item.item.cover}}" class="cart-item-img" />
+      </view>
 
-            </view>
+      <view class="item-block">
+        <view class="item-title">
+          {{item.item.name}}
+        </view>
+        <view class="price-tag">
+          <view class="item-price">
+            ￥{{item.item.priceDiscountYuan}}
+          </view>
+          <view>
+            X {{item.counts}}
+          </view>
+        </view>
+      </view>
 
-    </block>
+    </view>
+
+  </block>
 
 </view>
 
 <!-- 底部结算操作栏 -->
 <view class="bottom-settlement" hidden="{{fullHidden}}">
 
-    <view class="sel-all-block" catchtap="checkAllBox">
-        <image src="../../images/icon/{{allSelectImg}}.png" class="select-ico" />
-        <view class="sel-all-words">全选</view>
-    </view>
+  <view class="sel-all-block" catchtap="checkAllBox">
+    <image src="../../images/icon/{{allSelectImg}}.png" class="select-ico" />
+    <view class="sel-all-words">全选</view>
+  </view>
 
-    <view class="total-cal">
-        <view class="total-amount">
-            合计：￥{{totalAmount}}
-        </view>
-        <view class="total-desc">
-            不含运费、折扣优惠      
-        </view>
+  <view class="total-cal">
+    <view class="total-amount">
+      合计：￥{{totalAmount}}
     </view>
+    <view class="total-desc">
+      不含运费、折扣优惠
+    </view>
+  </view>
 
-    <view class="settlement-me" onTap="goConfirm">
-        去结算({{cartItemNum}})
-    </view>
+  <view class="settlement-me" onTap="goConfirm">
+    去结算({{cartItemNum}})
+  </view>
 
 </view>

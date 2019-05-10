@@ -38,22 +38,25 @@ Page({
       item: id
     });
     wx.request({
-      url: "http://rap2api.taobao.org/app/mock/167390/index/detail/?+id=${id}", //详情页数据
+      url: app.serverUrl + '/item/queryItems?itemIds=' + me.data.item, //详情页数据
       header: {
         'content-type': 'application/json'
       },
+      method: 'POST',
       success(res) {
-        if (res.data.code === 0) {
-          // console.log(res.data)
+        if (res.data.status === 200) {
+          console.log(res.data)
           me.setData({
             xinagqingyeData: res.data.data
           })
         }
       },
+      
       complete() {
         wx.hideLoading()
       }
     });
+   
   },
 
   /**

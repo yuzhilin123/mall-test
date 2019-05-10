@@ -21,12 +21,13 @@ Page({
     })
     var that = this
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu', // 轮播图数据
+      url: app.serverUrl + "/index/carousels", // 轮播图数据
       header: {
         'content-type': 'application/json'
       },
+      method: 'POST',
       success(res) {
-        if (res.data.code === 0) {
+        if (res.data.status === 200) {
           // console.log(res.data)
           that.setData({
             shouyeData: res.data.data
@@ -39,13 +40,14 @@ Page({
 
     });
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage',
+       url: app.serverUrl + "/index/items/new",
       //分类栏目1数据
       header: {
         'content-type': 'application/json'
       },
+      method: 'POST',
       success(res) {
-        if (res.data.code === 0) {
+        if (res.data.status === 200) {
           // console.log(res.data.data)
           that.setData({
             moreimages: res.data.data
@@ -56,12 +58,13 @@ Page({
     });
     //分类栏目2 数据
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/2', // 仅为示例，并非真实的接口地址
+      url: app.serverUrl + "/index/items/rec", // 仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json'
       },
+      method: 'POST',
       success(res) {
-        if (res.data.code === 0) {
+        if (res.data.status === 200) {
           // console.log(res.data)
           that.setData({
             fenleilanmu2: res.data.data
@@ -71,19 +74,24 @@ Page({
     });
     //分类栏目3 数据
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/3',
+      url: "http://rap2api.taobao.org/app/mock/167390/index/3",
       header: {
         'content-type': 'application/json'
       },
+      
       success(res) {
         if (res.data.code === 0) {
           // console.log(res.data)
           that.setData({
             fenleilanmu3: res.data.data
+            
+            
           })
         }
       }
+    
     });
+    
   },
   onShow: function() {
 
