@@ -1,3 +1,13 @@
+<view class="container" hidden="{{fullHidden}}">
+
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+      </label>
+    </radio-group>
+
+    <text class="text_2" catchtap="deleteled" >清空</text>
+  </view>
 <view class="empty" hidden="{{emptyHidden}}">
 
   <image src="../../images/icon/goshopping.png" class="goshopping-img" />
@@ -10,7 +20,7 @@
 </view>
 
 <view class="full" hidden="{{fullHidden}}">
-
+  
   <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
 
     <view class="cart-line">
@@ -38,7 +48,7 @@
             ￥{{item.item.priceDiscountYuan}}
           </view>
           <view>
-            X {{item.counts}}
+            {{item.counts}}
           </view>
         </view>
       </view>
@@ -66,7 +76,7 @@
     </view>
   </view>
 
-  <view class="settlement-me" onTap="goConfirm">
+  <view class="settlement-me" catchtap="goConfirm">
     去结算({{cartItemNum}})
   </view>
 

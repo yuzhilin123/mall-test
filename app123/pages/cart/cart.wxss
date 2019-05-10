@@ -1,3 +1,19 @@
+.container{
+   display: flex;
+  background-color: #f2f5f8;
+  height:100rpx;
+  /* padding:20rpx; */
+}
+.radio-group{
+flex:1;
+margin:30rpx 0 0 30rpx;
+}
+.text_2{
+flex:0 0 80rpx;
+font-size:36rpx;
+margin:30rpx 30rpx 0 0;
+
+}
 page {
   display: flex;
   flex-direction: column;
@@ -107,8 +123,8 @@ page {
     justify-content: center;
 }
 .cart-item-img {
-    width: 220rpx;
-    height: 290rpx;
+    width: 150rpx;
+    height: 190rpx;
     margin-left: 10rpx;
 }
 

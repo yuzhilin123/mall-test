@@ -2,6 +2,10 @@ const app = getApp();
 
 Page({
   data: {
+    items: [
+     
+      { name: '平台自营', value: '平台自营', checked: 'true' },
+    ],
     emptyHidden: false,
     fullHidden: true,
 
@@ -23,6 +27,7 @@ Page({
     // 预处理订单数据列表
     preOrderItemList: [],
   },
+
   onLoad() {
     var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
   },
@@ -34,6 +39,10 @@ Page({
     })
   },
 
+  // radioChange(e) {
+  //   console.log('radio发生change事件，携带value值为：', e.detail.value)
+  // },
+ 
   // 每次页面显示，请求最新的商品数据
   onShow() {
     var me = this;
@@ -45,7 +54,7 @@ Page({
 
       allSelectImg: "unselect",
       defaultSelectedAll: false,
-      
+
       // 默认的合计金额
       totalAmount: 0,
       // 默认的结算件数
@@ -91,7 +100,7 @@ Page({
           var myData = res.data;
           if (myData.status == 200) {
             var itemList = myData.data;
-            console.log(itemList);
+            // console.log(itemList);
 
             var finalCartItemList = [];
             for (var i = 0; i < itemList.length; i++) {
@@ -116,8 +125,11 @@ Page({
       });
     }
    
+  
+  
+  
   },
- 
+  
   // 用户单机触发的checkbox事件
   touchItem(e) {
     var me = this;
@@ -244,7 +256,7 @@ Page({
       });
     } else {
       // 把预处理订单数据列表存入缓存，在结算页面获取后进行处理
-      my.setStorage({
+      wx.setStorage({
         key: 'preOrderItemList', // 缓存数据的key
         data: me.data.preOrderItemList, // 要缓存的数据
       });
@@ -255,5 +267,5 @@ Page({
       });
     }
   },
-
+ 
 });

@@ -40,6 +40,24 @@ App({
     cartItem.counts = counts;
     return cartItem;
   },
+  // 根据商品id获取购物车中某个商品的件数
+  fetchItemCounts(cartItemIdArray, itemId) {
+    // debugger;
+    for (var i = 0; i < cartItemIdArray.length; i++) {
+      var item = cartItemIdArray[i];
+      if (item != null && item != undefined && itemId == item.itemId) {
+        return item.counts;
+      }
+    }
+  },
+  // 构建全局不可变商品对象，{商品对象， 购买数， 是否选中}
+  finalCartItem(item, counts, isSelect) {
+    var finalCartItem = new Object();
+    finalCartItem.item = item;
+    finalCartItem.counts = counts;
+    finalCartItem.isSelect = isSelect;
+    return finalCartItem;
+  },
   globalData: {
     userInfo: null
   }
