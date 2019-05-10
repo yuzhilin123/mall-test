@@ -71,7 +71,7 @@
       合计：￥{{totalAmount}}
     </view>
     <view class="total-desc">
-      不含运费、折扣优惠
+      
     </view>
   </view>
 
