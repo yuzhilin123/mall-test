@@ -185,13 +185,13 @@ page {
   color: gray;
 }
 .total-amount {
-  color: #ff6699;
+  color: #d81e06;
   font-weight: bold;
   margin-left: 10rpx;
 }
 .submit-order {
     color: white;
-    background-color: #ff6699;
+    background-color: #d81e06;
     width: 35%;
     text-align: center;
     font-size: 16px;
