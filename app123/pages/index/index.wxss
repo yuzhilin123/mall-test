@@ -41,7 +41,6 @@ swiper image {
 }
 .text_3 {
   color: white;
-
   font-size: 28rpx;
 }
 .wrap {

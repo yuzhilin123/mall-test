@@ -91,7 +91,35 @@ Page({
       }
     
     });
-    
+    var wrap = document.getElementById('wrap');
+    var start = document.getElementById('text_2');
+    var startWidth = getStyle(text_2, 'width');
+    function move() {
+      wrap.scrollLeft++;
+      if (wrap.scrollLeft >= startWidth) {
+        wrap.scrollLeft = 0;
+      }
+    }
+    var timer = window.setInterval(move, 10);
+    box.onmouseover = function () {
+      window.clearInterval(timer);
+    };
+    box.onmouseout = function () {
+      timer = window.setInterval(move, 10);
+    };
+
+    // 获取css的值
+    function getStyle(ele, attr) {
+      var val = null, reg = null;
+      if (window.getComputedStyle) {
+        val = window.getComputedStyle(ele, null)[attr];
+      } else {
+        val = ele.currentStyle[attr];
+      }
+      reg = /^(-?\d+(\.\d+)?)(px|pt|rem|em)?$/i; // 正则匹配单位,若带有px等单位，将单位剔除掉
+      return reg.test(val) ? parseFloat(val) : val;
+    }
+   
   },
   onShow: function() {
 
