@@ -362,7 +362,7 @@ swiper image {
  display: inline-block;
  white-space: nowrap;
  animation-name: around;
- animation-duration: 10s; /*过渡时间*/
+ animation-duration: 15s; /*过渡时间*/
  animation-iteration-count: infinite;
  animation-timing-function:linear;
 }
