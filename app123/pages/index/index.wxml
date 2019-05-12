@@ -7,7 +7,11 @@
   <view class="text_container" catchtap="onShowed">
     <image lazy-load="true" class="text_icon" src='/images/icon/laba.png'></image>
     <text class='text_1'>公告</text>
-    <text class='text_2'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+    <view class="wrap">
+        <text class='text_2'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+    <text class='text_3'>11华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+    </view>
+    
     <image lazy-load="true" class="icon_img" src='/images/icon/rightarrow.png'></image>
   </view>
 </view>

@@ -36,13 +36,21 @@ swiper image {
 
 .text_2 {
   color: white;
-  width: 20rpx;
-  height: 70rpx;
-  overflow: hidden;
-  display: inline-block;
-  flex: 1;
-  white-space: nowrap;
+ 
   font-size: 28rpx;
+}
+.text_3 {
+  color: white;
+
+  font-size: 28rpx;
+}
+.wrap {
+ display: inline-block;
+ width:1000rpx;
+  white-space: nowrap;
+    height: 70rpx;
+    overflow: hidden;
+    line-height:70rpx;
 }
 
 .icon_img {
