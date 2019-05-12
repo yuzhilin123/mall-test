@@ -12,8 +12,9 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" style="height: 100%;">
+
   <view class="full" hidden="{{fullHidden}}">
+  <scroll-view scroll-y="true" style="height: 100%;">
     <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
       <view class="cart-line">
         <view class="item-radio">
@@ -52,9 +53,10 @@
         </view>
       </view>
     </block>
+    </scroll-view>
   </view>
 
-</scroll-view>
+
 
 <!-- 底部结算操作栏 -->
 <view class="bottom-settlement" hidden="{{fullHidden}}">
