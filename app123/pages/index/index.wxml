@@ -1,51 +1,21 @@
+<swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="5000">
+  <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+    <image lazy-load="true" src="{{itemName.imageUrl}}"></image>
+  </swiper-item>
+</swiper>
 
-  <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="5000">
-    <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
-      <image lazy-load="true" src="{{itemName.imageUrl}}"></image>
-    </swiper-item>
-  </swiper>
-  <!-- <view class="text_container">
-  <text class="text_2" >公告</text>
-     <view class='width border-box f-pl30 f-pr30 f-mt30 f-mb30'>
-        <form report-submit="true" bindsubmit="bindOpenAnnouncement">
-            <button class='btn-reset flex announcement order-box f-pl25 f-pr25' form-type="submit">
-              
-                <view class='f-font24 s-32 announcement-context 123'id="123">
-                    
-                    <view animation="{{animationData}}" class="f-font24 s-32 announcement-text f-text-left"style="font-size:28rpx;position:relative;left:585rpx;">{{announcementText}}</view>
-                </view>
-            </button>
-        </form>
-    </view>
- </view> -->
 <view class="marquee_container" style="--marqueeWidth--:-42em" catchtap="onShowed">
   <view class="marquee_text">华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</view>
 </view>
-<!-- <scroll-view class="container" catchtap="onShowed">
-  <view class="scrolltxt">
-    <view class="marquee_box">
-      <view class="marquee_text" style="transform: translateX(-{{marqueeDistance}}px)">
-        <text>{{text}}</text>
-        <text style="margin-right:{{marquee_margin}}px;"></text>
-        <text style="margin-right:{{marquee_margin}}px;">{{text}}</text>        
-      </view>
-    </view>
-  </view>
-</scroll-view> -->
-
-
 <view class="search" catchtap="onBindFocus">
   <view class="search_container">
     <icon type="search" class="search-img" size="13" color="#405f80"></icon>
 
     <text class="search-text">请输入您要搜索的内容...</text>
   </view>
-
-
-  <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image> -->
 </view>
 <view class="container">
-<view class="movie-list-container">
+  <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
         <text class="slogan">{{fenleilanmu2.name}}推荐</text>
@@ -83,7 +53,7 @@
       </view>
     </view>
   </view>
-  
+
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
@@ -115,11 +85,11 @@
   </view>
   <view class="container_2">
     <view class="text2">
-    <text style='font-size:30rpx;'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+      <text style='font-size:30rpx;'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+    </view>
+    <view class="text3" catchtap="onHideed">
+      <text style='color: white;font-size:30rpx;'>我知道了</text>
+    </view>
   </view>
-  <view class="text3" catchtap="onHideed">
-    <text style='color: white;font-size:30rpx;'>我知道了</text>
-  </view>
-  </view>
-  
-  </view>
+
+</view>

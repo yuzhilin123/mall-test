@@ -6,18 +6,11 @@
           <image lazy-load="true" src="{{itemName.coverList[0]}}"></image>
         </swiper-item>
       </swiper>
-
-
-
       <view class="text_name1">
         <text style="color:red; font-size:36rpx">产品名称：￥{{itemName.priceNormalYuan}}元</text>
-
-
       </view>
-
       <view class="text_name1">
-
-        <text>单位元/吨：上海仓
+  <text>单位元/吨：上海仓
 </text>
       </view>
       <view class="text_name2">
