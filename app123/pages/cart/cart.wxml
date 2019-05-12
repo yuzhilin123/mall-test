@@ -11,6 +11,10 @@
     <view class="help-yourself-words" catchtap="helpYourself">随便逛一下</view>
   </view>
 </view>
+
+ <scroll-view
+    scroll-y="true"
+    style="height: 909rpx;">
 <view class="full" hidden="{{fullHidden}}">
   <block wx:for="{{finalCartItemList}}" wx:for-item="item" wx:key="unique">
     <view class="cart-line">
@@ -51,6 +55,9 @@
     </view>
   </block>
 </view>
+
+ </scroll-view>
+    
 <!-- 底部结算操作栏 -->
 <view class="bottom-settlement" hidden="{{fullHidden}}">
   <view class="sel-all-block" catchtap="checkAllBox">

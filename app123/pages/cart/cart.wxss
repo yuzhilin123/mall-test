@@ -113,7 +113,7 @@ page {
 /* 购物车车不为空的时候 start */
 .full {
     /* 解决固定底部后的遮挡问题 */
-    padding-bottom: 100rpx;
+    height: 909rpx;
 }
 .cart-line {
     display: flex;
