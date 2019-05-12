@@ -76,7 +76,16 @@
     <text>上海仓 规格(25kg英文塑编袋)</text>
     </view>
     <view class="dialog_num">
-     <text class="confirm_num"> 1吨</text> 
+    
+<view class="stepper">
+	<!-- 减号 -->
+	<text class="{{minusStatus}}" catchtap="bindMinus">-</text>
+	<!-- 数值 -->
+	<input type="number" bindchange="bindManual" value="{{num}}" />
+	<!-- 加号 -->
+	<text class="normal" catchtap="bindPlus">+</text>
+</view>
+
    </view>
     <view class="dialog_confirm" catchtap="dialog_confirm">
     <text class="confirm">确定</text>  </view>
