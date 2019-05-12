@@ -8,7 +8,9 @@ Page({
     searchResult: {},
     containerShow: true,
     searchPanelShow: false,
-    isShowed: false
+    isShowed: false,
+    animationData: {}, //公告动画
+    announcementText: "华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234",//公告内容
   },
 
   onReachBottom: function(e) {
@@ -91,40 +93,48 @@ Page({
       }
     
     });
-    var wrap = document.getElementById('wrap');
-    var start = document.getElementById('text_2');
-    var startWidth = getStyle(text_2, 'width');
-    function move() {
-      wrap.scrollLeft++;
-      if (wrap.scrollLeft >= startWidth) {
-        wrap.scrollLeft = 0;
-      }
-    }
-    var timer = window.setInterval(move, 10);
-    box.onmouseover = function () {
-      window.clearInterval(timer);
-    };
-    box.onmouseout = function () {
-      timer = window.setInterval(move, 10);
-    };
 
-    // 获取css的值
-    function getStyle(ele, attr) {
-      var val = null, reg = null;
-      if (window.getComputedStyle) {
-        val = window.getComputedStyle(ele, null)[attr];
-      } else {
-        val = ele.currentStyle[attr];
-      }
-      reg = /^(-?\d+(\.\d+)?)(px|pt|rem|em)?$/i; // 正则匹配单位,若带有px等单位，将单位剔除掉
-      return reg.test(val) ? parseFloat(val) : val;
-    }
+    var that = this;
+    //创建动画实例
+    var animation = wx.createAnimation({
+      //此处以公告最长内容来设置动画持续时间（duration：决定整个动画播放的速度）
+      duration: 25000,
+      timingFunction: 'linear'
+    });
+    //偏移距离为公告内容的长度*字体大小（若字体大小使用rpx需要换算成px）
+    animation.translate(-Number(this.data.announcementText.length * 16), 0).step();
+    this.setData({
+      animationData: animation.export()
+    });
+    // 循环播放动画关键步骤（使用两个定时器）
+    // 第一个定时器：将字幕恢复到字幕开始点（为屏幕左边）
+    this.recoveraAnimation = setInterval(function () {
+      animation.translate(295, 0).step({ duration: 0 });
+      this.setData({
+        animationData: animation.export()
+      });
+    }.bind(this), 26000);
+    // 第二个定时器：重新开始移动动画
+    this.restartAnimation = setInterval(function () {
+      animation.translate(-Number(this.data.announcementText.length * 16), 0).step();
+      this.setData({
+        animationData: animation.export()
+      });
+    }.bind(this), 27000);
+  
+
+  
+ 
    
   },
   onShow: function() {
 
   },
-
+  onUnload: function () {
+    //清除定时器
+    clearInterval(this.recoveraAnimation);
+    clearInterval(this.restartAnimation);
+  },
   onMoreTap: function(event) {
     var category = event.currentTarget.dataset.category;
     // console.log(category)

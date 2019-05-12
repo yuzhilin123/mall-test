@@ -1,20 +1,23 @@
-<view class="container_1">
+
   <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item wx:for="{{shouyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
       <image lazy-load="true" src="{{itemName.imageUrl}}"></image>
     </swiper-item>
   </swiper>
   <view class="text_container" catchtap="onShowed">
-    <image lazy-load="true" class="text_icon" src='/images/icon/laba.png'></image>
-    <text class='text_1'>公告</text>
-    <view class="wrap">
-        <text class='text_2'>华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
-    <text class='text_3'>11华友商城小程序正式上线了！电脑打印机监控网络上门服务报修电话：05434343234</text>
+  <text class="text_2" >公告</text>
+     <view class='width border-box f-pl30 f-pr30 f-mt30 f-mb30'>
+        <form report-submit="true" bindsubmit="bindOpenAnnouncement">
+            <button class='btn-reset flex announcement order-box f-pl25 f-pr25' form-type="submit">
+              
+                <view class='f-font24 s-32 announcement-context'>
+                    <view animation="{{animationData}}" class="f-font24 s-32 announcement-text f-text-left">{{announcementText}}</view>
+                </view>
+            </button>
+        </form>
     </view>
-    
-    <image lazy-load="true" class="icon_img" src='/images/icon/rightarrow.png'></image>
-  </view>
-</view>
+ </view>
+
 <view class="search" catchtap="onBindFocus">
   <view class="search_container">
     <icon type="search" class="search-img" size="13" color="#405f80"></icon>
