@@ -50,6 +50,25 @@ App({
       }
     }
   },
+  // 获取购物车中某个商品是否选中的状态
+  fetchItemIsSelect(finalCartItemList, itemId) {
+    for (var i = 0; i < finalCartItemList.length; i++) {
+      var item = finalCartItemList[i].item;
+      if (item != null && item != undefined && itemId == item.id) {
+        return finalCartItemList[i].isSelect;
+      }
+    }
+  },
+  // 获取购物车中的某个商品对象信息
+  fetchItemFromFinalList(finalCartItemList, itemId) {
+    for (var i = 0; i < finalCartItemList.length; i++) {
+      var item = finalCartItemList[i].item;
+      if (item != null && item != undefined && itemId == item.id) {
+        return item;
+      }
+    }
+  },
+
   // 构建全局不可变商品对象，{商品对象， 购买数， 是否选中}
   finalCartItem(item, counts, isSelect) {
     var finalCartItem = new Object();

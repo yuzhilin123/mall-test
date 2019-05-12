@@ -131,11 +131,12 @@ Page({
   touchItem(e) {
     var me = this;
     // 获取商品信息dataset
-    var itemInfo = e.target.dataset.itemInfo;
-    var singleArray = itemInfo.split(",");
+    var itemInfo = e.target.dataset.iteminfo;
+ 
+    var singleArray = itemInfo.split(","); 
     var itemId = singleArray[0];
     var counts = singleArray[1];
-
+ 
     // 获取checkbox之前的状态
     var finalCartItemList = me.data.finalCartItemList;
     var isSelect = app.fetchItemIsSelect(finalCartItemList, itemId);

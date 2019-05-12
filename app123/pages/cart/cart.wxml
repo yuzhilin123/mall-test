@@ -1,5 +1,5 @@
 <view class="container" >
-        <image src="../../images/icon/unselect.png" class="select-ico1" catchtap="touchItem"  />
+        <image src="../../images/icon/{{customSelectImg}}.png" class="select-ico1" catchtap="touchItem"  />
         <text class='text_1'>平台自营</text>
   </view>
 <view class="empty" hidden="{{emptyHidden}}">
