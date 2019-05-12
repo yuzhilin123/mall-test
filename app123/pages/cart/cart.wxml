@@ -36,19 +36,19 @@
             <view class="item-price">
               ￥{{item.item.priceDiscountYuan}}
             </view>
-            <view>
+            
 
               <view class="stepper">
                 <!-- 减号 -->
                 <text class="{{minusStatus}}" catchtap="bindMinus">-</text>
-                <!-- 数值 -->
+                <!-- 数s值 -->
                 <input type="number" bindchange="bindManual" value="{{item.counts}}" />
                 <!-- 加号 -->
                 <text class="normal" catchtap="bindPlus">+</text>
               </view>
 
 
-            </view>
+           
           </view>
         </view>
       </view>

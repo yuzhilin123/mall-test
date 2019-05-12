@@ -21,11 +21,11 @@ Page({
     // 默认的结算件数
     cartItemNum: 0,
 
-    // 预处理订单数据列表
+  
     preOrderItemList: [],
-    // input默认是1
+    
     num: 1,
-    // 使用data数据对象设置样式名
+    
     minusStatus: 'disabled'
 
   },
@@ -304,7 +304,7 @@ Page({
       wx.navigateTo({
         url: "cart_confirm/cart_confirm"
       });
-  }
+    }
   },
  
 });
