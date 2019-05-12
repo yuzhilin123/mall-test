@@ -300,11 +300,11 @@ Page({
         data: me.data.preOrderItemList, // 要缓存的数据
       });
 
-      // TODO: 购买商品之前需要判断当前用户是否登录
+    //   // TODO: 购买商品之前需要判断当前用户是否登录
       wx.navigateTo({
-        url: ""
+        url: "cart_confirm/cart_confirm"
       });
-    }
+  }
   },
  
 });
