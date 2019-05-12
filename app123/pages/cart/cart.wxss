@@ -113,13 +113,14 @@ page {
 /* 购物车车不为空的时候 start */
 .full {
     /* 解决固定底部后的遮挡问题 */
-    height: 909rpx;
+    /* height: 909rpx; */
+   
 }
 .cart-line {
     display: flex;
     flex-direction: row;
     background-color: white;
-    padding: 25rpx;
+    padding: 10rpx 25rpx 10rpx 25rpx;
     margin-top: 10rpx;
 }
 .item-radio {
