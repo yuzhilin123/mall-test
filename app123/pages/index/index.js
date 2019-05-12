@@ -98,7 +98,7 @@ Page({
     //创建动画实例
     var animation = wx.createAnimation({
       //此处以公告最长内容来设置动画持续时间（duration：决定整个动画播放的速度）
-      duration: 20000,
+      duration: 21000,
       timingFunction: 'linear'
     });
     //偏移距离为公告内容的长度*字体大小（若字体大小使用rpx需要换算成px）
@@ -108,9 +108,11 @@ Page({
     });
     // 循环播放动画关键步骤（使用两个定时器）
     // 第一个定时器：将字幕恢复到字幕开始点（为屏幕左边）
-    this.recoveraAnimation = setInterval(function () {
-      animation.translate(300, 0).step({ duration: 0 });
-      this.setData({
+    that.restartAnimation = setInterval(function () {
+      animation.translate(300, 0).step({
+        duration: 0
+      });
+      that.setData({
         animationData: animation.export()
       });
     }.bind(this), 20000);
