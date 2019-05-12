@@ -1,11 +1,11 @@
 <!-- 收货地址为空的情况 -->
 <navigator url="/pages/orders/addressList/addressList">
     <view class="empty-address" hidden="{{addressEmpty}}">
-        <image src="/resources/icon/smallIco/location.png" class="location-ico"/>
+        <image src="../../../images/icon/location.png" class="location-ico"/>
         <view class="write-address">        
             请填写收货地址    
         </view>
-        <image src="/resources/icon/smallIco/arrow-left.png" class="arrow-left-ico"/>
+        <image src="../../../images/icon/arrow_left.png" class="arrow-left-ico"/>
     </view>
 </navigator>
 <!-- 收货地址不为空，查询有地址列表的情况 -->
@@ -28,7 +28,7 @@
 </navigator>
 
 <view class="orders splitter">
-    <block a:for="{{preOrderItemList}}">
+    <block wx:for="{{preOrderItemList}}">
         <view class="item">
             <image src="{{item.item.cover}}" class="items-cover"/>
             <view class="item-title">                                

@@ -16,6 +16,7 @@ Page({
     // 获取全局的用户对象
     
     var userInfo = app.globalData.userInfo;
+    
     // 使用临时id 1001
     var userId = 1001;
     if (userInfo != null && userInfo != undefined) {
