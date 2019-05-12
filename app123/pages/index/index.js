@@ -183,8 +183,8 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/lunbotu',
-      method: "GET",
+      url: app.serverUrl + "/index/carousels",
+      method: "POST",
       header: {
         'content-type': 'application/text'
       },
@@ -204,8 +204,8 @@ Page({
     });
     //
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/moreimage',
-      method: "GET",
+      url: app.serverUrl + "/index/items/new",
+      method: "POST",
       header: {
         'content-type': 'application/text'
       },
@@ -222,8 +222,8 @@ Page({
     });
     //
     wx.request({
-      url: 'http://rap2api.taobao.org/app/mock/167390/index/2',
-      method: "GET",
+      url: app.serverUrl + "/index/items/rec",
+      method: "POST",
       header: {
         'content-type': 'application/text'
       },
