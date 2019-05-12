@@ -98,7 +98,7 @@ Page({
     //创建动画实例
     var animation = wx.createAnimation({
       //此处以公告最长内容来设置动画持续时间（duration：决定整个动画播放的速度）
-      duration: 21000,
+      duration: 30000,
       timingFunction: 'linear'
     });
     //偏移距离为公告内容的长度*字体大小（若字体大小使用rpx需要换算成px）
@@ -115,14 +115,14 @@ Page({
       that.setData({
         animationData: animation.export()
       });
-    }.bind(this), 20000);
+    }.bind(this), 30000);
     // 第二个定时器：重新开始移动动画
     this.restartAnimation = setInterval(function () {
       animation.translate(-Number(this.data.announcementText.length * 16), 0).step();
       this.setData({
         animationData: animation.export()
       });
-    }.bind(this), 21000);
+    }.bind(this), 31000);
   
 
   
