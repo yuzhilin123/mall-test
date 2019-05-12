@@ -137,20 +137,24 @@ swiper image {
 }
 .icon{
   margin:40rpx;
+  display:flex;
+  flex-direction: column;
+  height:100%;
 }
 .dialog_container{
-/* flex:1 */
+flex:1;
 /* height:100rpx; */
 position: relative;
 
 
+
 }
 .dialog_size{
-/* flex:1 */
+flex:1
 
 }
 .dialog_num{
-/* flex:1 */
+flex:1
 
 }
 .image_size{
@@ -176,4 +180,22 @@ position: relative;
 }
 .text_9{
   margin-left:40rpx;
+}
+.dialog_confirm{
+  flex:1
+}
+.success{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index:2000;
+  width:230rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  background: black;
+  text-align: center;
+  opacity: .8;
+ font-size:28rpx;
+ color:white;
 }

@@ -72,8 +72,12 @@
         <text class="text_9">￥{{itemName.priceNormalYuan}}元</text>
         <image class="image_size1"src="../../../images/icon/xx.png"catchtap="hideModal"></image>
     </view>
-    <view class="dialog_size">14324</view>
-    <view class="dialog_num">2342</view>
+    <view class="dialog_size">
+    <text>上海仓 规格(25kg英文塑编袋)</text>
+    </view>
+    <view class="dialog_num">1吨</view>
+    <view class="dialog_confirm" catchtap="dialog_confirm">确定</view>
 </view>
     
 </view>
+<view class="success"wx:if="{{showSuccess}}">加入购物车成功</view>

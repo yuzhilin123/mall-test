@@ -13,6 +13,7 @@ Page({
     animationInfo: {},
     animationOpacity: 0,
     showShopPopup:false,
+    showSuccess:false,
     animationData: {} // 动画数据
   },
   goShouye: function(event) {
@@ -72,6 +73,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    
     var animation = wx.createAnimation();
     this.setData({
       // 导出动画效果到页面
@@ -80,8 +82,8 @@ Page({
   },
 
   // 添加商品到购物车
-  addToCart() {
-    this.showModal();
+  dialog_confirm() {
+    
    var me=this;
     
     me.setData({
@@ -136,10 +138,24 @@ Page({
       key: 'cartItemIdArray', // 缓存数据的key
       data: cartItemIdArray // 要缓存的数据
     });
+    this.setData({
+      showSuccess:true,
+      showShopPopup: false
+    })
+    this.hideModal()
+    
     
     var cartItemIdArray = wx.getStorageSync('cartItemIdArray')
+    setTimeout(function () {
+      this.setData({
+        
+        showSuccess:false,
+      });
+
+     
+    }.bind(this), 1000);
   },
-  
+ 
   // 实现动画效果
   showAddToCartAnimation() {
     // 创建动画
@@ -184,11 +200,14 @@ Page({
   buyMe(){
     this.showModal();
   },
+  addToCart(){
+    this.showModal();
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    
+
   },
   showModal() {
     // 显示遮罩层
