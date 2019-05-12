@@ -27,7 +27,7 @@ Page({
     // 首先应该到缓存里去查询是否存在地址缓存信息，减少后端的交互
     var addressChoosed = wx.getStorage({ key: 'addressChoosed' });
     if (addressChoosed != null && addressChoosed != undefined) {
-      wx.setData({
+      me.setData({
         addressEmpty: true,
         addressFull: false,
 
@@ -62,12 +62,12 @@ Page({
           // 获得地址
           var address = myData.data;
           if (address == null || address == undefined) {
-            wx.setData({
+            me.setData({
               addressEmpty: false,
               addressFull: true,
             });
           } else {
-            wx.setData({
+            me.setData({
               addressEmpty: true,
               addressFull: false,
 
