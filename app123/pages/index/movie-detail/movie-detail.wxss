@@ -136,7 +136,7 @@ swiper image {
   flex-direction: column */
 }
 .icon{
-  margin:40rpx;
+  margin:40rpx 40rpx 0rpx 40rpx;
   display:flex;
   flex-direction: column;
   height:100%;
@@ -182,7 +182,9 @@ flex:1
   margin-left:40rpx;
 }
 .dialog_confirm{
-  flex:1
+  flex:1;
+
+
 }
 .success{
   position:fixed;
@@ -198,4 +200,26 @@ flex:1
   opacity: .8;
  font-size:28rpx;
  color:white;
+}
+.confirm{
+  display: inline-block;
+  width:200rpx;
+  height:80rpx;
+  line-height:80rpx; 
+  background: red;
+  color: white;
+  border-radius: 20rpx;
+  text-align: center;
+margin-left:472rpx;
+}
+.confirm_num{
+    display: inline-block;
+  width:200rpx;
+  height:80rpx;
+  line-height:80rpx; 
+  
+  color: black;
+  
+  text-align: center;
+margin-left:472rpx;
 }

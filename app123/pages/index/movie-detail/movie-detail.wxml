@@ -75,8 +75,11 @@
     <view class="dialog_size">
     <text>上海仓 规格(25kg英文塑编袋)</text>
     </view>
-    <view class="dialog_num">1吨</view>
-    <view class="dialog_confirm" catchtap="dialog_confirm">确定</view>
+    <view class="dialog_num">
+     <text class="confirm_num"> 1吨</text> 
+   </view>
+    <view class="dialog_confirm" catchtap="dialog_confirm">
+    <text class="confirm">确定</text>  </view>
 </view>
     
 </view>
