@@ -113,7 +113,7 @@ page {
 /* 购物车车不为空的时候 start */
 .full {
     /* 解决固定底部后的遮挡问题 */
-    /* height: 909rpx; */
+   padding-bottom:100rpx;
    
 }
 .cart-line {
@@ -164,7 +164,7 @@ page {
 	/*给主容器设一个边框*/
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	/* margin:0 auto; */
+	margin-right:36rpx;
 }
  
 /*加号和减号*/
