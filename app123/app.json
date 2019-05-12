@@ -1,10 +1,9 @@
 {
   "pages": [
-      "pages/index/movie-detail/movie-detail",
     "pages/index/index",
+      "pages/index/movie-detail/movie-detail",
     "pages/cart/cart",
     "pages/classify/classify",
-  
    "pages/search/search",
     "pages/personal_center/personal_center",
     "pages/personal_center/order/order",

@@ -1,4 +1,4 @@
-<view>
+
   <view class="container" wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
     <scroll-view scroll-y="true" style="height:100%">
       <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="false" interval="5000" class="text_name">
@@ -55,8 +55,25 @@
       </view> -->
       放入购物车
     </view>
-    <view class="buy-me" onTap="buyMe">购买</view>
+    <view class="buy-me" catchtap="buyMe">购买</view>
 
 
   </view>
+
+
+  <!--屏幕背景变暗的背景  -->
+<view  wx:if="{{showShopPopup}}"class="dialog1"></view>
+<view  wx:if="{{showShopPopup}}"class="dialog3"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" wx:if="{{showShopPopup}}"class="dialog2" wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+<view class="icon">
+<view class="dialog_container">
+        <image class="image_size"src="{{itemName.coverList[0]}}"></image>
+        <text class="text_9">￥{{itemName.priceNormalYuan}}元</text>
+        <image class="image_size1"src="../../../images/icon/xx.png"catchtap="hideModal"></image>
+    </view>
+    <view class="dialog_size">14324</view>
+    <view class="dialog_num">2342</view>
+</view>
+    
 </view>

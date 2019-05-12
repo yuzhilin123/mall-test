@@ -11,7 +11,9 @@ Page({
     likeHidden: true,
     unlikeHidden: false,
     animationInfo: {},
-    animationOpacity: 0
+    animationOpacity: 0,
+    showShopPopup:false,
+    animationData: {} // 动画数据
   },
   goShouye: function(event) {
     wx.switchTab({
@@ -79,6 +81,7 @@ Page({
 
   // 添加商品到购物车
   addToCart() {
+    this.showModal();
    var me=this;
     
     me.setData({
@@ -175,13 +178,71 @@ Page({
     }.bind(this), 600);
 
   },
+
+
+
+  buyMe(){
+    this.showModal();
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    
   },
-
+  showModal() {
+    // 显示遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      /**
+        * http://cubic-bezier.com/ 
+        * linear 动画一直较为均匀
+        * ease 从匀速到加速在到匀速
+        * ease-in 缓慢到匀速
+        * ease-in-out 从缓慢到匀速再到缓慢
+        * 
+        * http://www.tuicool.com/articles/neqMVr
+        * step-start 动画一开始就跳到 100% 直到动画持续时间结束 一闪而过
+        * step-end 保持 0% 的样式直到动画持续时间结束 一闪而过
+        */
+      timingFunction: "ease",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(), // export 方法每次调用后会清掉之前的动画操作。
+      showShopPopup: true
+    })
+    setTimeout(() => {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()  // export 方法每次调用后会清掉之前的动画操作。
+      })
+      // console.log(this)
+    }, 200)
+  },
+  hideModal() {
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "ease",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showShopPopup: false
+      })
+      // console.log(this)
+    }.bind(this), 200)
+  },
   /**
    * 生命周期函数--监听页面卸载
    */
