@@ -45,7 +45,7 @@ swiper image {
 }
 .announcement {
     color: #a0a0a0;
-    background: #fff0e3;
+    /* background: #fff0e3; */
     border-radius: 6rpx;
     line-height: 66rpx;
     height: 66rpx;
@@ -56,7 +56,7 @@ swiper image {
     overflow: hidden;
 }
 .announcement-text {
-    width: 570rpx;
+    width: 580rpx;
     /* 文字内容只做一行显示 */
     white-space: nowrap;
 }
@@ -92,7 +92,7 @@ swiper image {
 }
 
 .search_container {
-  width: 90%;
+  width: 710rpx;
   height: 70%;
   line-height: 72rpx;
   background: white;

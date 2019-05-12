@@ -122,7 +122,7 @@ Page({
       this.setData({
         animationData: animation.export()
       });
-    }.bind(this), 31000);
+    }.bind(this), 30100);
   
 
   

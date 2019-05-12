@@ -58,8 +58,8 @@
    
     <view class="add-to-cart" catchtap="addToCart">
       <!-- 定义动画组件，创建实例 -->
-      <view animation="{{animationInfo}}" class="animation-img" style="opacity:{{animationOpacity}}; background: red;">
-      </view>
+      <!-- <view animation="{{animationInfo}}" class="animation-img" style="opacity:{{animationOpacity}}; background: red;">
+      </view> -->
       放入购物车
     </view>
     <view class="buy-me" onTap="buyMe">购买</view>
