@@ -85,6 +85,7 @@
   <text class="num_cls"bindchange="bindManual" >{{num}}</text>
 	<!-- 加号 -->
 	<text class="normal" catchtap="bindPlus">+</text>
+   <text class="normal_2">吨</text>
 </view>
 
    </view>
