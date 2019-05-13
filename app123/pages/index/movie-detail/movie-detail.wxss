@@ -121,14 +121,14 @@ swiper image {
   z-index:99;
   top:0;
   left:0;
-  bottom:100rpx;
+  bottom:0rpx;
   opacity:0.5
 }
 .dialog2{
   position: fixed;
   width:100%;
   height:800rpx;
-  bottom:100rpx;
+  bottom:0rpx;
   background:white;
   z-index:999;
   /* padding:40rpx; */
@@ -227,35 +227,39 @@ margin-left:472rpx;
 	width: 80px;
 	height: 26px;
 	/*给主容器设一个边框*/
-	border: 1px solid #ccc;
+	
 	border-radius: 3px;
-	margin-left:490rpx;
+  display: flex;
 }
  
 /*加号和减号*/
-.stepper text {
-	width: 19px;
-	line-height: 26px;
+
+ .normal_1{
+   width:80rpx;
+font-size: 30rpx;
 	text-align: center;
-	float: left;
-}
- 
+  background: #f3f2f3;
+  
+ }
 /*数值*/
-.stepper input {
-	width: 40px;
-	height: 26px;
-	float: left;
-	margin: 0 auto;
+.num_cls {
+	width:100rpx;
+	
+
+	
 	text-align: center;
-	font-size: 12px;
-	/*给中间的input设置左右边框即可*/
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
+	font-size: 30rpx;
+
 }
  
 /*普通样式*/
-.stepper .normal{
+.normal{
 	color: black;
+  width:80rpx;
+  font-size:30rpx;
+  	text-align: center;
+     background: #f3f2f3;
+     
 }
  
 /*禁用样式*/

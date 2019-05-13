@@ -40,14 +40,15 @@
             </view>
             
 
-              <view class="stepper">
-                <!-- 减号 -->
-                <text class="{{minusStatus}}" catchtap="bindMinus">-</text>
-                <!-- 数s值 -->
-                <input type="number" bindchange="bindManual" value="{{item.counts}}" />
-                <!-- 加号 -->
-                <text class="normal" catchtap="bindPlus">+</text>
-              </view>
+          <view class="stepper">
+	<!-- 减号 -->
+	<text class="{{minusStatus}} normal_1" catchtap="bindMinus">-</text>
+	<!-- 数值 -->
+
+  <text class="num_cls"bindchange="bindManual" >{{num}}</text>
+	<!-- 加号 -->
+	<text class="normal" catchtap="bindPlus">+</text>
+</view>
 
 
            

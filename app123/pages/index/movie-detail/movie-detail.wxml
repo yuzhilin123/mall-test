@@ -63,7 +63,7 @@
 
   <!--屏幕背景变暗的背景  -->
 <view  wx:if="{{showShopPopup}}"class="dialog1"></view>
-<view  wx:if="{{showShopPopup}}"class="dialog3"></view>
+<!-- <view  wx:if="{{showShopPopup}}"class="dialog3"></view> -->
 <!--弹出框  -->
 <view animation="{{animationData}}" wx:if="{{showShopPopup}}"class="dialog2" wx:for="{{xinagqingyeData}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
 <view class="icon">
@@ -79,9 +79,10 @@
     
 <view class="stepper">
 	<!-- 减号 -->
-	<text class="{{minusStatus}}" catchtap="bindMinus">-</text>
+	<text class="{{minusStatus}} normal_1" catchtap="bindMinus">-</text>
 	<!-- 数值 -->
-	<input type="number" bindchange="bindManual" value="{{num}}" />
+
+  <text class="num_cls"bindchange="bindManual" >{{num}}</text>
 	<!-- 加号 -->
 	<text class="normal" catchtap="bindPlus">+</text>
 </view>
