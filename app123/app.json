@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+      "pages/cart/cart_confirm/cart_confirm",
+    
       "pages/index/movie-detail/movie-detail",
     "pages/cart/cart",
-    "pages/cart/cart_confirm/cart_confirm",
+  
     "pages/classify/classify",
    "pages/search/search",
     "pages/personal_center/personal_center",

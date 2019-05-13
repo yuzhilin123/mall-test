@@ -28,7 +28,7 @@
 </navigator>
 
 <view class="orders splitter">
-    <block wx:for="{{preOrderItemList}}">
+    <block wx:for="{{preOrderItemList}}"wx:key="unique">
         <view class="item">
             <image src="{{item.item.cover}}" class="items-cover"/>
             <view class="item-title">                                
