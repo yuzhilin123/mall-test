@@ -55,7 +55,7 @@
       </view> -->
       放入购物车
     </view>
-    <view class="buy-me" catchtap="buyMe">购买</view>
+    <view class="buy-me" catchtap="buyMe">立即购买</view>
 
 
   </view>

@@ -13,6 +13,11 @@
 
 margin-left:10rpx;
 }
+.text_9{
+  font-size:30rpx;
+
+margin-left:380rpx;
+}
 .select-ico1{
 
   width: 40rpx;
@@ -93,8 +98,10 @@ page {
     
 }
 .total-amount {
-    color: #ff6699;
-    margin-top: 20rpx;
+    color: #d81e06;
+    margin-top: 35rpx;
+    margin-left:107rpx;
+
 }
 .total-desc {
     color: gray;
