@@ -3,5 +3,6 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "测试版本",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light"
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh":true
 }
