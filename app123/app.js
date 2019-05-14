@@ -78,6 +78,6 @@ App({
     return finalCartItem;
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   }
 })
