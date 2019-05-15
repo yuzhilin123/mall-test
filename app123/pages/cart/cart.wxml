@@ -42,12 +42,12 @@
 
           <view class="stepper">
 	<!-- 减号 -->
-	<text class="{{minusStatus}} normal_1" catchtap="bindMinus">-</text>
+	<text class="{{minusStatus}} normal_1" catchtap="bindMinus(item.item.id)">-</text>
 	<!-- 数值 -->
 
   <input type="number" maxlength="3" bindchange="bindManual" value="{{item.counts}}" />
 	<!-- 加号 -->
-	<text class="normal" catchtap="bindPlus">+</text>
+	<text class="normal" catchtap="bindPlus(item.item.id)">+</text>
   <text class="normal_2">吨</text>
 </view>
 

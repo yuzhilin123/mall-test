@@ -35,6 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+   
     wx.showLoading({
       title: '加载中',
     })
@@ -44,6 +45,7 @@ Page({
     me.setData({
       item: id
     });
+
     wx.request({
       url: app.serverUrl + '/item/queryItems?itemIds=' + me.data.item, //详情页数据
       header: {
@@ -99,7 +101,10 @@ Page({
 
     // 商品id存入缓存购物车
     var itemId = me.data.item;
+    //商品输入的数量
+   var product_counts=Number(me.data.num);
    
+  //  debugger
     me.cartItemIncrease(itemId);
   },
   // 商品放入购物车
@@ -118,8 +123,9 @@ Page({
       if (item != null && item != undefined && item.itemId == itemId) {
         // 删除原来的item
         cartItemIdArray.splice(i, 1);
-        // 商品counts累加1
-        var counts = item.counts + 1;
+        // 商品counts累加输入的数量
+        var counts = item.counts ++;
+        
         // 重新构建商品对象
         var cartItemNew = app.cartItem(itemId, counts);
         cartItemIdArray.push(cartItemNew);

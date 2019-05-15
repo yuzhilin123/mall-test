@@ -32,6 +32,10 @@ Page({
 
   onLoad() {
     var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
+    // wx.removeStorage({
+    //   key: 'cartItemIdArray',
+    //   success: function (res) { },
+    // })
   },
 
   // 跳转到首页
@@ -112,6 +116,7 @@ Page({
               var isSelect = 0; // 默认未选中：0   选中：1
               // 构建全局不可变商品
               var finalCartItem = app.finalCartItem(itemList[i], itemCounts, isSelect);
+             
               // 不可变商品列表，用于结算
               finalCartItemList.push(finalCartItem);
             }
@@ -247,7 +252,8 @@ Page({
     });
   },
   /* 点击减号 */
-  bindMinus: function () {
+  bindMinus: function (res) {
+   
     var num = this.data.num;
     // 如果大于1时，才可以减
     if (num > 1) {
@@ -262,7 +268,9 @@ Page({
     });
   },
   /* 点击加号 */
-  bindPlus: function () {
+  bindPlus: function (res) {
+    console.log(res)
+    debugger
     var num = this.data.num;
     // 不作过多考虑自增1
     num++;
