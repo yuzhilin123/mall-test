@@ -1,11 +1,21 @@
 .container{
    display: flex;
-   padding-left:20rpx;
+   padding-left:25rpx;
    align-items: center;
   background-color: #f2f5f8;
   height:100rpx;
   line-height:100rpx;
   /* padding:20rpx; */
+}
+
+.stepper input {
+	width: 49px;
+	height: 26px;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+
 }
 
 .text_1{
@@ -16,7 +26,7 @@ margin-left:10rpx;
 .text_9{
   font-size:30rpx;
 
-margin-left:380rpx;
+margin-left:458rpx;
 }
 .select-ico1{
 
@@ -170,7 +180,7 @@ page {
 /* end */
 
 .stepper {
-	width: 200rpx;
+	width: 210rpx;
 	height:  52rpx;
 	/*给主容器设一个边框*/
 	line-height: 52rpx;

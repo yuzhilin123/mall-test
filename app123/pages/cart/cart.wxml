@@ -45,7 +45,7 @@
 	<text class="{{minusStatus}} normal_1" catchtap="bindMinus">-</text>
 	<!-- 数值 -->
 
-  <text class="num_cls"bindchange="bindManual" >{{item.counts}}</text>
+  <input type="number" maxlength="3" bindchange="bindManual" value="{{item.counts}}" />
 	<!-- 加号 -->
 	<text class="normal" catchtap="bindPlus">+</text>
   <text class="normal_2">吨</text>
