@@ -76,13 +76,13 @@
     <text>上海仓 规格(25kg英文塑编袋)</text>
     </view>
     <view class="dialog_num">
-    
+    <view>购买数量</view>
 <view class="stepper">
 	<!-- 减号 -->
 	<text class="{{minusStatus}} normal_1" catchtap="bindMinus">-</text>
 	<!-- 数值 -->
 
-    <input type="number"maxlength="3" bindchange="bindManual" value="{{item.counts}}" />
+    <input type="number"maxlength="3" bindchange="bindManual" value="{{num}}" />
 	<!-- 加号 -->
 	<text class="normal" catchtap="bindPlus">+</text>
    <text class="normal_2">吨</text>

@@ -162,7 +162,9 @@ flex:1
 
 }
 .dialog_num{
-flex:1
+flex:1;
+display:flex;
+justify-content: space-between
 
 }
 .image_size{
@@ -211,14 +213,14 @@ flex:1
 }
 .confirm{
   display: inline-block;
-  width:200rpx;
+  width:100%;
   height:80rpx;
   line-height:80rpx; 
   background: red;
   color: white;
   border-radius: 20rpx;
   text-align: center;
-margin-left:472rpx;
+
 }
 .confirm_num{
     display: inline-block;
