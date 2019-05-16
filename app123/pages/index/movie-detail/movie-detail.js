@@ -14,6 +14,10 @@ Page({
     animationOpacity: 0,
     showShopPopup:false,
     showSuccess:false,
+    select: false,
+    select_1: false,
+    tihuoWay: '仓库选择',
+    tihuoWay_1:"包装选择",
     animationData: {}, // 动画数据
     // input默认是1
     num: 1,
@@ -74,6 +78,31 @@ Page({
   onReady: function() {
 
   },
+  bindShowMsg() {
+    this.setData({
+      select: !this.data.select
+    })
+  },
+  mySelect(e) {
+    var name = e.currentTarget.dataset.name
+    this.setData({
+      tihuoWay: name,
+      select: false
+    })
+  },
+
+  bindShowMsg_1() {
+    this.setData({
+      select_1: !this.data.select_1
+    })
+  },
+  mySelect_1(e) {
+    var name = e.currentTarget.dataset.name_1
+    this.setData({
+      tihuoWay_1: name,
+      select_1: false
+    })
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -103,12 +132,12 @@ Page({
     var itemId = me.data.item;
     //商品输入的数量
    var product_counts=Number(me.data.num);
-   
+  
   //  debugger
-    me.cartItemIncrease(itemId);
+    me.cartItemIncrease(itemId, product_counts);
   },
   // 商品放入购物车
-  cartItemIncrease(itemId) {
+  cartItemIncrease(itemId, product_counts) {
     var me = this;
 
     // 获取购物车的缓存数组（没有数据，则赋予一个空数组）  
@@ -123,8 +152,9 @@ Page({
       if (item != null && item != undefined && item.itemId == itemId) {
         // 删除原来的item
         cartItemIdArray.splice(i, 1);
+       
         // 商品counts累加输入的数量
-        var counts = item.counts ++;
+        var counts = item.counts + product_counts;
         
         // 重新构建商品对象
         var cartItemNew = app.cartItem(itemId, counts);
@@ -162,7 +192,7 @@ Page({
         showSuccess:false,
       });
 
-     
+
     }.bind(this), 1000);
   },
  

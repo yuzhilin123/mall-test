@@ -9,13 +9,32 @@
       <view class="text_name1">
         <text style="color:red; font-size:36rpx">产品名称：￥{{itemName.priceNormalYuan}}元</text>
       </view>
-      <view class="text_name1">
-  <text>单位元/吨：上海仓
-</text>
+
+      <view class="text_name12">
+        <text>单位元/吨</text>
+       <view class='list-msg2' bindtap='bindShowMsg'style="display:inline-block">
+        <text>{{tihuoWay}}</text>
+        <image style='height:20rpx;width:20rpx;' src='/images/icon/down.png'></image>
+    </view>
+         <view class="select_box" wx:if="{{select}}">
+         <view class="select_one" bindtap="mySelect" data-name="上海仓">上海仓</view>
+        <view class="select_one" bindtap="mySelect" data-name="北京仓">北京仓</view>
+        <view class="select_one" bindtap="mySelect" data-name="深圳仓">深圳仓</view>
+        <view class="select_one" bindtap="mySelect" data-name="广东仓">广东仓</view>
+    </view>
       </view>
+
       <view class="text_name2">
-        <text>选择规格</text>
-        <text>包装选择(如25kg厂牌塑编袋)</text>
+        <text >选择规格 </text>
+        <view class='list-msg2_1' bindtap='bindShowMsg_1'style="display:inline-block">
+        <text>{{tihuoWay_1}}</text>
+        <image style='height:20rpx;width:20rpx;' src='/images/icon/down.png'></image>
+    </view>
+         <view class="select_box_1" wx:if="{{select_1}}">
+        <view class="select_one_1" bindtap="mySelect_1" data-name_1="25kg厂牌塑编袋">25kg厂牌塑编袋</view>
+        <view class="select_one_1" bindtap="mySelect_1" data-name_1="35kg厂牌塑编袋">35kg厂牌塑编袋</view>
+        <view class="select_one_1" bindtap="mySelect_1" data-name_1="45kg厂牌塑编袋">45kg厂牌塑编袋</view>
+    </view>
       </view>
 
       <view class="text_name3">
@@ -27,6 +46,10 @@
         <text>1.检测报告</text>
         <text>2.MSDS安全技术</text>
       </view>
+
+    
+
+
 
     </scroll-view>
   </view>

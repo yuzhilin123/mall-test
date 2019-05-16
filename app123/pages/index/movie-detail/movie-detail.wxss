@@ -26,20 +26,95 @@ swiper image {
   /* z-index: 1; */
 }
 
+.select_box {
+    background-color: #eee;
+    padding: 0 10rpx;
+    width: 20%;
+    position: absolute;
+    top: 82rpx;
+    z-index: 2;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+    left:371rpx;
+    font-size:30rpx;
+}
+ 
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 100%;
+    }
+}
+ 
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}
+.list-msg2_1{
+  margin-left:30rpx;
+   
+}
+
+.select_box_1 {
+    background-color: #eee;
+    padding: 0 10rpx;
+    width: 33%;
+    position: absolute;
+    top: 82rpx;
+    z-index: 1;
+    overflow: hidden;
+    animation: myfirst 0.5s;
+    left:371rpx;
+    font-size:30rpx;
+}
+ 
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 180rpx;
+    }
+}
+ 
+.select_one_1 {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1px solid #ccc;
+}
+
 .text_name1 {
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
   margin-bottom: 30rpx;
   border: 1px solid #ddd;
+  
 }
-
-.text_name2 {
+.list-msg2{
+  margin-left:30rpx;
+}
+.text_name12{
+  position: relative;
   height: 100rpx;
   line-height: 100rpx;
   text-align: center;
   margin-bottom: 30rpx;
   border: 1px solid #ddd;
+}
+.text_name2 {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+  border: 1px solid #ddd;
+  /* display: flex; */
 }
 
 .text_name3 {
