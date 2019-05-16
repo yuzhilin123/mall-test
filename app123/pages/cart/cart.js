@@ -30,13 +30,7 @@ Page({
 
   },
 
-  onLoad() {
-    var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
-    // wx.removeStorage({
-    //   key: 'cartItemIdArray',
-    //   success: function (res) { },
-    // })
-  },
+
 
   // 跳转到首页
   helpYourself(e) {
@@ -55,8 +49,8 @@ Page({
 
     // 初始化数据
     me.setData({
-      emptyHidden: false,
-      fullHidden: true,
+      emptyHidden:true,
+      fullHidden: false,
 
       allSelectImg: "unselect",
       defaultSelectedAll: false,
@@ -70,12 +64,12 @@ Page({
     // 从缓存中拿到购物车数组对象
 
     var cartItemIdArray = wx.getStorageSync('cartItemIdArray');
-   
+ 
     // 判断cartItemIdArray是否为空，如果不为空，则到后台接口查询商品数据
     if (cartItemIdArray != null && cartItemIdArray != undefined) {
       me.setData({
         emptyHidden: true,
-        fullHidden: false,
+        fullHidden: false, 
       });
 
       // 循环拼接商品ids   1001,1002,1003,
@@ -289,6 +283,13 @@ Page({
     this.setData({
       num: num
     });
+  },
+  //平台自营
+  checkCo(){
+    var me = this;
+    me.setData({
+
+    })
   },
   // 用户前往结算页面确认订单进行支付
   goConfirm() {

@@ -167,7 +167,7 @@ Page({
     // 在没有添加过当前商品的时候，新创建一个对象放入数组
     if (!isItemAdded) {
       // 构建新的商品对象
-      var cartItem = app.cartItem(itemId, 1);
+      var cartItem = app.cartItem(itemId, product_counts);
       // 把这个商品对象放入购物车
       cartItemIdArray.push(cartItem);
     }
