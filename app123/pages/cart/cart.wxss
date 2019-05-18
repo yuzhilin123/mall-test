@@ -30,6 +30,8 @@ margin-left:458rpx;
 }
 .select-ico1{
 
+position: relative;
+top:10rpx;
   width: 40rpx;
     height: 40rpx;
   
@@ -98,6 +100,7 @@ page {
 .select-ico {
     width: 40rpx;
     height: 40rpx;
+   
 }
 .total-cal {
     width: 45%;
