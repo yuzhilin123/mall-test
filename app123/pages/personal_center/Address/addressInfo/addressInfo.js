@@ -6,10 +6,12 @@ Page({
     address: {},
   },
   onLoad(params) {
+    var cities=app.globalData.trainBeginCity;
     var me = this;
     var addressId = params.addressId
     me.setData({
-      addressId: addressId
+      addressId: addressId,
+      cities: cities
     });
 
     if (addressId != null && addressId != undefined && addressId != '') {

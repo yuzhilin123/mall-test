@@ -79,6 +79,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    trainBeginCity: '北京'
    
   }
 })

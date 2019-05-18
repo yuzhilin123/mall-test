@@ -32,7 +32,7 @@
                 </view>
             </view>
             <view catchtap="tempChooseCity">
-                <view class="area-choose">北京</view>
+                <view class="area-choose">{{cities}}</view>
             </view>
         </view>
 
