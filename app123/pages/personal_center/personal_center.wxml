@@ -45,4 +45,4 @@
   </view>
 </view>
 
-<view catchtap="goAddress">收货地址</view>
+<view catchtap="goAddress"class="goAddress">收货地址</view>

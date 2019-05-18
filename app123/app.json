@@ -1,12 +1,13 @@
 {
   "pages": [
-   
+    "pages/personal_center/personal_center",
+      "pages/index/index",
     "pages/personal_center/Address/Address",
-      "pages/personal_center/personal_center",
+     
     "pages/cart/cart",
      
     "pages/index/movie-detail/movie-detail",
-    "pages/index/index",
+
       
      
 
