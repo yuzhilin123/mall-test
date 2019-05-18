@@ -1,15 +1,15 @@
 <!-- 收货地址为空的情况 -->
-<navigator url="/pages/orders/addressList/addressList">
+<navigator url="addressList/addressList">
     <view class="empty-address" hidden="{{addressEmpty}}">
         <image src="../../../images/icon/location.png" class="location-ico"/>
         <view class="write-address">        
             请填写收货地址    
         </view>
-        <image src="../../../images/icon/arrow_left.png" class="arrow-left-ico"/>
+        <image src="../../../images/icon/arrow-right.png" class="arrow-left-ico"/>
     </view>
 </navigator>
 <!-- 收货地址不为空，查询有地址列表的情况 -->
-<navigator url="/pages/orders/addressList/addressList?addressChooseId={{addressInfo.id}}">
+<navigator url="addressList/addressList?addressChooseId={{addressInfo.id}}">
     <view class="full-address" hidden="{{addressFull}}">
         <view class="contact-info">
             <view>收货人：</view>

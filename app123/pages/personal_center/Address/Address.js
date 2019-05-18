@@ -8,8 +8,8 @@ Page({
     addressFull: true,
   },
   onLoad() {
-    var me = this;
-    me.initAddress();
+    // var me = this;
+    // me.initAddress();
    },
 
   initAddress() {

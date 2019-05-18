@@ -8,13 +8,13 @@
      
     "pages/index/movie-detail/movie-detail",
 
-      
-     
+      "pages/personal_center/Address/addressInfo/addressInfo",
+     "pages/personal_center/Address/addressList/addressList",
 
       "pages/cart/cart_confirm/cart_confirm",
     
    
-   
+      "pages/personal_center/Address/addressInfo/chooseCity/chooseCity",
  
     "pages/classify/classify",
    "pages/search/search",
