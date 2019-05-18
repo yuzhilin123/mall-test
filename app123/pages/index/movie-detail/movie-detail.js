@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    xinagqingyeData: {},
+    xinagqingyeData:{},
     item: '',
     likeHidden: true,
     unlikeHidden: false,
@@ -58,18 +58,19 @@ Page({
       method: 'POST',
       success(res) {
         if (res.data.status === 200) {
-          console.log(res.data)
+          console.log(res.data.data)
           me.setData({
             xinagqingyeData: res.data.data
+           
           })
         }
       },
-      
+     
       complete() {
         wx.hideLoading()
       }
     });
-   
+ 
   },
 
   /**
@@ -236,9 +237,39 @@ Page({
   },
 
 
+//直接购买
+  buyMe() {
+    var me = this;
+    var userInfo =app.globalData.userInfo;
+    if (userInfo == null || userInfo == undefined) {
+      wx.confirm({
+        title: "温馨提示",
+        content: "购买商品先登录",
+        confirmButtonText: "登录",
+        cancelButtonText: "取消",
+        success: (res) => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: "pages/personal_center/personal_center",
+            });
+          }
+        },
+      });
+    } else {
+      // 构建预处理订单商品对象
+      var preOrderItem = app.finalCartItem(me.data.xinagqingyeData[0], 1, null);
+      var preOrderItemList = [];
+      preOrderItemList.push(preOrderItem);
+      wx.setStorage({
+        key: "preOrderItemList",
+        data: preOrderItemList,
+      });
 
-  buyMe(){
-    this.showModal();
+      wx.navigateTo({
+        url: "../../cart/cart_confirm/cart_confirm"
+      });
+    }
+
   },
   addToCart(){
     this.showModal();
