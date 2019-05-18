@@ -16,15 +16,15 @@ Page({
 
     if (addressId != null && addressId != undefined && addressId != '') {
       // 获取全局的用户对象
-      var userInfo = app.getGlobalUserInfo();
+      // var userInfo = app.getGlobalUserInfo();
       // 使用临时id 1001
       var userId = 1001;
-      if (userInfo != null && userInfo != undefined) {
-        userId = userInfo.id;
-      }
+      // if (userInfo != null && userInfo != undefined) {
+      //   userId = userInfo.id;
+      // }
 
       // 请求接口
-      my.httpRequest({
+      wx.request({
         url: app.serverUrl + '/address/fetch?addressId=' + addressId
           + '&userId=' + userId,
         method: 'POST',
@@ -50,8 +50,8 @@ Page({
           }
         },
         complete: function (res) {
-          my.hideNavigationBarLoading();
-          my.hideLoading();
+          wx.hideNavigationBarLoading();
+          wx.hideLoading();
         }
       });
     }
@@ -66,7 +66,7 @@ Page({
     var txtCity = e.detail.value.txtCity;
 
     if (receiver == null || receiver == undefined || receiver == '') {
-      my.alert({
+      wx.alert({
         title: '友情提示',
         content: "请输入收货人",
         buttonText: "OK",
@@ -74,7 +74,7 @@ Page({
       return;
     }
     if (mobile == null || mobile == undefined || mobile == '') {
-      my.alert({
+      wx.alert({
         title: '友情提示',
         content: "请输入手机号",
         buttonText: "OK",
@@ -82,7 +82,7 @@ Page({
       return;
     }
     if (descAddress == null || descAddress == undefined || descAddress == '') {
-      my.alert({
+      wx.alert({
         title: '友情提示',
         content: "请输入详细地址",
         buttonText: "OK",
@@ -90,7 +90,7 @@ Page({
       return;
     }
     if (txtCity == null || txtCity == undefined || txtCity == '') {
-      my.alert({
+      wx.alert({
         title: '友情提示',
         content: "请选择一个城市",
         buttonText: "OK",
@@ -99,13 +99,14 @@ Page({
     }
 
     // 获取全局的用户对象
-    var userInfo = app.getGlobalUserInfo();
+    
+    var userInfo = app.globalData.userInfo;
 
     // 使用临时id 1001
     var userId = 1001;
-    if (userInfo != null && userInfo != undefined) {
-      userId = userInfo.id;
-    }
+    // if (userInfo != null && userInfo != undefined) {
+    //   userId = userInfo.id;
+    // }
 
     // var addressId ="";
     var addressId = me.data.addressId;
@@ -114,13 +115,13 @@ Page({
     }
 
     // 发送请求到后端
-    my.showNavigationBarLoading();
-    my.showLoading({
+    wx.showNavigationBarLoading();
+    wx.showLoading({
       content: "疯狂加载中..."
     });
 
     // 请求接口
-    my.httpRequest({
+    wx.request({
       url: app.serverUrl + '/address/createOrUpdate?addressId=' + addressId,
       data: {
         userId: userId,
@@ -144,20 +145,20 @@ Page({
         if (myData.status == 200) {
           // 获得地址
           var address = myData.data;
-          my.setStorageSync({
+          wx.setStorageSync({
             key: 'addressChoosed', // 缓存数据的key
             data: address, // 要缓存的数据
           });
-
+        
           // 往前退回1级页面
-          my.navigateBack({
+          wx.navigateBack({
             delta: 1
           });
         }
       },
       complete: function (res) {
-        my.hideNavigationBarLoading();
-        my.hideLoading();
+        wx.hideNavigationBarLoading();
+        wx.hideLoading();
       }
     });
 

@@ -54,7 +54,10 @@
     </view>
 
     <!-- 底部 完成 -->
-    <view class="bottom-done"style=" background-color: #ff0000;">
+    <!-- <view class="bottom-done"style="background:#ff0000">
+        <button type="default" class="done" form-type="submit"> 完  成 </button>
+    </view> -->
+</form>
+<view class="bottom-done"style="background:#ff0000">
         <button type="default" class="done" form-type="submit"> 完  成 </button>
     </view>
-</form>

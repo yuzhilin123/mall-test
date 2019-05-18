@@ -6,9 +6,9 @@ Page({
     defaultChoose: 0,     // 默认选中的index定义
     defaultRdoChoose: 0,     // 默认radio选中的下标
   },
-  onLoad(params) {
+  onLoad(param) {
 
-    var addressChooseId = params.addressChooseId;
+    var addressChooseId = param.addressChooseId;
     this.setData({
       addressChooseId: addressChooseId
     });
@@ -20,21 +20,21 @@ Page({
     var me = this;
 
     // 获取全局的用户对象
-    var userInfo = app.getGlobalUserInfo();
+    // var userInfo = app.getGlobalUserInfo();
     // 使用临时id 1001
     var userId = 1001;
-    if (userInfo != null && userInfo != undefined) {
-      userId = userInfo.id;
-    }
+    // if (userInfo != null && userInfo != undefined) {
+    //   userId = userInfo.id;
+    // }
 
     // 发送请求到后端
-    my.showNavigationBarLoading();
-    my.showLoading({
+    wx.showNavigationBarLoading();
+    wx.showLoading({
       content: "疯狂加载中..."
     });
 
     // 请求接口
-    my.httpRequest({
+    wx.request({
       url: app.serverUrl + '/address/addressList/' + userId,
       method: 'POST',
       header: {
@@ -82,8 +82,8 @@ Page({
         }
       },
       complete: function (res) {
-        my.hideNavigationBarLoading();
-        my.hideLoading();
+        wx.hideNavigationBarLoading();
+        wx.hideLoading();
       }
     });
 
@@ -94,21 +94,21 @@ Page({
     var defaultAddressId = e.detail.value;
 
     // 获取全局的用户对象
-    var userInfo = app.getGlobalUserInfo();
+    // var userInfo = app.getGlobalUserInfo();
     // 使用临时id 1001
     var userId = 1001;
-    if (userInfo != null && userInfo != undefined) {
-      userId = userInfo.id;
-    }
+    // if (userInfo != null && userInfo != undefined) {
+    //   userId = userInfo.id;
+    // }
 
     // 发送请求到后端
-    my.showNavigationBarLoading();
-    my.showLoading({
+    wx.showNavigationBarLoading();
+    wx.showLoading({
       content: "疯狂加载中..."
     });
 
     // 请求接口
-    my.httpRequest({
+    wx.request({
       url: app.serverUrl + '/address/setDefault?userId=' + userId
         + '&addressId=' + defaultAddressId,
       method: 'POST',
@@ -118,8 +118,8 @@ Page({
       dataType: 'json',
       success: function (res) { },
       complete: function (res) {
-        my.hideNavigationBarLoading();
-        my.hideLoading();
+        wx.hideNavigationBarLoading();
+        wx.hideLoading();
       }
     });
   },
@@ -132,12 +132,12 @@ Page({
     // 获得具体的地址对象
     var address = addressList[addressIndex];
     // 更新地址缓存
-    my.setStorageSync({
+    wx.setStorageSync({
       key: 'addressChoosed', // 缓存数据的key
       data: address, // 要缓存的数据
     });
 
-    my.navigateBack({
+    wx.navigateBack({
       delta: 1
     });
   },
@@ -151,7 +151,7 @@ Page({
 
   modifyMe(e) {
     var addressId = e.target.dataset.addressId;
-    my.redirectTo({
+    wx.redirectTo({
       url: 'addressInfo/addressInfo?addressId=' + addressId,
     });
   },
@@ -160,7 +160,7 @@ Page({
     var me = this;
     var addressId = e.target.dataset.addressId;
 
-    my.confirm({
+    wx.confirm({
       title: "友情提示",
       content: "确认删除改地址吗？",
       confirmButtonText: "确认",
@@ -168,13 +168,13 @@ Page({
       success: (res) => {
         if (res.confirm) {
           // 发送请求到后端
-          my.showNavigationBarLoading();
-          my.showLoading({
+          wx.showNavigationBarLoading();
+          wx.showLoading({
             content: "疯狂加载中..."
           });
 
           // 请求接口
-          my.httpRequest({
+          wx.request({
             url: app.serverUrl + '/address/delete/' + addressId,
             method: 'POST',
             header: {
@@ -190,17 +190,17 @@ Page({
                 me.init();
 
                 // 判断删除的address是否和缓存中的一致，如果一致，则清楚对应的缓存数据
-                var addressChoosed = my.getStorageSync({ key: 'addressChoosed' }).data;
+                var addressChoosed = wx.getStorageSync({ key: 'addressChoosed' }).data;
                 if (addressChoosed != null && addressChoosed != undefined && addressChoosed.id == addressId) {
-                  my.removeStorageSync({
+                  wx.removeStorageSync({
                     key: 'addressChoosed', // 缓存数据的key
                   });
                 }
               }
             },
             complete: function (res) {
-              my.hideNavigationBarLoading();
-              my.hideLoading();
+              wx.hideNavigationBarLoading();
+              wx.hideLoading();
             }
           });
         }

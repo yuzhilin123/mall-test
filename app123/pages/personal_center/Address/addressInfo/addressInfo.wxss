@@ -36,7 +36,7 @@ page {
   height: 36rpx;
 }
 .address-lable {
-  color: gray;
+  /* color: gray; */
   font-size: 13px;
   margin-left: 10rpx;
 }
@@ -54,14 +54,15 @@ page {
 
 /* 底部结算栏 start */
 .bottom-done {
-    background-color: #ff0000;
+    
     position:fixed; 
     bottom: 0;
     width: 750rpx;
+    z-index: 1
 }
 .done {
     color: white;
-     background-color: #ff0000;
+     /* background-color: #ff0000; */
     font-size: 16px;
 }
 /* end */

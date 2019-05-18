@@ -1,7 +1,7 @@
 
 <radio-group onChange="setDefault">
-    <block wx:for="{{addressList}}" wx:for-item="address">
-        <view class="address-outter" style="border-style:dash;border-color:#ff6699; border-width:{{defaultChoose == index ? 2 : 0}}px;">
+    <block wx:for="{{addressList}}" wx:for-item="address" wx:key="uniqe">
+        <view class="address-outter" style="border-style:dashed;border-color:#ff6699; border-width:{{defaultChoose == index ? 2 : 0}}px;">
             <view class="address-info" catchtap="chooseMe" data-clickIndex="{{index}}">
                 <view class="address-line">
                     <view>{{address.receiver}}</view>
@@ -19,11 +19,11 @@
                     </label>
                 </view>
                 <view class="oper-block">
-                    <image src="/resources/icon/smallIco/modify.png" class="oper-ico"/>
+                    <image src="../../../../images/icon/modify.png" class="oper-ico"/>
                     <view class="display-words" data-addressId="{{address.id}}" onTap="modifyMe">编辑</view>
                 </view>
                 <view class="oper-block">
-                    <image src="/resources/icon/smallIco/delete.png" class="oper-ico"/>
+                    <image src="../../../../images/icon/delete.png" class="oper-ico"/>
                     <view class="display-words" data-addressId="{{address.id}}" onTap="deleteMe">删除</view>
                 </view>
             </view>
