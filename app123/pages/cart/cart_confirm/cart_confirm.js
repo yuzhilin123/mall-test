@@ -157,10 +157,11 @@ Page({
 
   submitOrder() {
     var me = this;
-
+   
     // 从缓存中获取预处理订单数据列表
-    var preOrderItemList = wx.getStorage({ key: 'preOrderItemList' });
-
+    var preOrderItemList = wx.getStorageSync('preOrderItemList');
+    // console.log(preOrderItemList)
+    // debugger
     // 循环这个list，构建商品str
     var itemStr = "";
     for (var i = 0; i < preOrderItemList.length; i++) {
@@ -169,51 +170,53 @@ Page({
       var singleItem = itemId + "|" + itemCounts + ",";
       itemStr += singleItem;
     }
+   
 
     // 拼接完毕后，发送数据到后端，调用接口，生成[待付款]订单
-    // TODO: 由于目前没有登录，暂时可以使用临时的用户id
+   
     // var buyerId = "temp-buyerId";
     var remark = me.data.orderRemark;
-    // TODO: 地址管理，后续完善
-    // var addressId = "";
+ 
+    var addressId = "";
 
     // 获取全局的用户对象
-    var userInfo = app.globalData.userInfo;
+    // var userInfo = app.globalData.userInfo;
+    // console.log(userInfo)
     // 使用临时id 1001
     var userId = 1001;
-    if (userInfo != null && userInfo != undefined) {
-      userId = userInfo.id;
-    }
-    var addressInfo = me.data.addressInfo;
+    // if (userInfo != null && userInfo != undefined) {
+    //   userId = userInfo.id;
+    // }
+    // var addressInfo = me.data.addressInfo;
 
     // 发送请求到后端
     wx.showNavigationBarLoading();
     wx.showLoading({
       content: "疯狂加载中..."
     });
-
+   
     // 请求接口，查询商品详情
     wx.request({
       url: app.serverUrl + '/order/createOrder?itemStr=' + itemStr
-        + "&buyerId=" + userId
-        + "&addressId=" + addressInfo.id,
-      data: {
-        remark: (remark == undefined ? "" : remark)
-      },
+        + "&buyerId=" + userId,
+        // + "&addressId=" + addressId,
+      // data: {
+      //   remark: (remark == undefined ? "" : remark)
+      // },
       method: 'POST',
       header: {
         'content-type': 'application/json'
       },
       dataType: 'json',
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         // 获取拿到后端的数据
         var myData = res.data;
         if (myData.status == 200) {
           // 获得待付款订单状态的id
           var orderId = myData.data;
           console.log(orderId);
-
+          // https://www.imoocdsp.com/order/createOrder?itemStr=item-new-1001|1,item-new-3001|2,&buyerId=1001&addressId=
           // 清理缓存
           wx.clearItemCache();
 
@@ -224,6 +227,7 @@ Page({
           });
         }
       },
+      
       complete: function (res) {
         wx.hideNavigationBarLoading();
         wx.hideLoading();

@@ -113,6 +113,7 @@ Page({
              
               // 不可变商品列表，用于结算
               finalCartItemList.push(finalCartItem);
+          
             }
             me.setData({
               finalCartItemList: finalCartItemList,
