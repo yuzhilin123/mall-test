@@ -94,7 +94,7 @@ Page({
 
     // 从缓存中获取预处理订单数据列表
     var preOrderItemList = wx.getStorageSync('preOrderItemList');
-    console.log(preOrderItemList)
+    // console.log(preOrderItemList)
 
     var checkAllTotalAmount = 0;
     for (var i = 0; i < preOrderItemList.length; i++) {

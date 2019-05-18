@@ -27,6 +27,11 @@ Page({
       url: "order/order",
     })
   },
+  goAddress:function(){
+    wx.navigateTo({
+      url: "Address/Address",
+    })
+  },
   onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({

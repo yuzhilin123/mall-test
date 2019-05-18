@@ -1,0 +1,69 @@
+/* 收货地址为空 start */
+.empty-address {
+  margin-top: 10rpx;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  /* 纵轴垂直居中 */
+  align-items:center; 
+
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+  padding-bottom: 30rpx;
+}
+.location-ico {
+  width: 40rpx;
+  height: 40rpx;
+  /* margin-left: 10rpx; */
+}
+.write-address {
+  color: gray;
+  font-size: 13px;
+  /* flex 子项的放大比例，撑满后，箭头就靠右了 */
+  flex-grow: 1;
+  margin-left: 10rpx;
+}
+.arrow-left-ico {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+/* end */
+
+/* 收货地址存在时 start */
+.full-address {
+  margin-top: 10rpx;
+  background-color: white;
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx;
+}
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  margin-left: 60rpx;
+}
+
+.address-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  color: gray;
+  margin-top: 16rpx;
+  line-height: 40rpx;
+}
+.address-province {
+  margin-left: 20rpx;
+}
+.address-city {
+  margin-left: 10rpx;
+}
+.address-district {
+  margin-left: 10rpx;
+}
+.address-desc {
+  flex-grow: 1;
+}
+/* end */

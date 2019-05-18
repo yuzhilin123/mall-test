@@ -1,0 +1,28 @@
+<!-- 收货地址为空的情况 -->
+<navigator url="/pages/orders/addressList/addressList">
+    <view class="empty-address" hidden="{{addressEmpty}}">
+        <image src="../../../images/icon/location.png" class="location-ico"/>
+        <view class="write-address">        
+            请填写收货地址    
+        </view>
+        <image src="../../../images/icon/arrow_left.png" class="arrow-left-ico"/>
+    </view>
+</navigator>
+<!-- 收货地址不为空，查询有地址列表的情况 -->
+<navigator url="/pages/orders/addressList/addressList?addressChooseId={{addressInfo.id}}">
+    <view class="full-address" hidden="{{addressFull}}">
+        <view class="contact-info">
+            <view>收货人：</view>
+            <view>{{addressInfo.receiver}}</view>
+            <view>{{addressInfo.mobile}}</view>
+        </view>
+        <view class="address-info">
+            <image src="../../../images/icon/location.png" class="location-ico"/>
+            <!-- <view class="address-province">            江苏        </view> -->
+            <view class="address-city">{{addressInfo.city}}</view>
+            <!-- <view class="address-district">            白下区        </view> -->
+            <view class="address-desc">{{addressInfo.descAddress}}</view>
+            <image src="../../../images/icon/arrow-right.png" class="arrow-left-ico"/>
+        </view>
+    </view>
+</navigator>

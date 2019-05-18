@@ -44,3 +44,5 @@
     <view class="status-words" style='color: {{orderIndex == 4 ? "#ff6699" : "#868585"}}'>售后</view>
   </view>
 </view>
+
+<view catchtap="goAddress">收货地址</view>

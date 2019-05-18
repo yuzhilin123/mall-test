@@ -63,7 +63,7 @@
       <image src="../../../images/tab/cart.png" class="like-ico" />
       <view class="like-words">购物车</view>
     </view> -->
-    <view class="like-img" catchtap="likeItem">
+    <view class="like-img" catchtap="likeItem"hidden="{{unlikeHidden}}">
       <image src="../../../images/icon/unlike.png" class="like-ico" hidden="{{unlikeHidden}}" />
       <view class="like-words" onTap="">收藏</view>
     </view>

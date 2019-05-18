@@ -58,7 +58,7 @@ Page({
       method: 'POST',
       success(res) {
         if (res.data.status === 200) {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           me.setData({
             xinagqingyeData: res.data.data
            
@@ -70,9 +70,109 @@ Page({
         wx.hideLoading()
       }
     });
- 
+    var userInfo = app.globalData.userInfo;
+    // console.log(userInfo)
+    if (userInfo != null && userInfo != undefined) {
+      // 查询用户是否收藏商品
+      wx.request({
+        url: app.serverUrl + '/item/userIsLikeItem?itemId=' + me.data.item
+          + '&userId=' + userInfo.id,
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res);
+          // 获取拿到后端的数据
+          var myData = res.data;
+          if (myData.status == 200) {
+            var isLike = myData.data;
+
+            if (isLike == 1) {
+              me.setData({
+                unlikeHidden: true,
+                likeHidden: false,
+              });
+            } else {
+              me.setData({
+                unlikeHidden: false,
+                likeHidden: true,
+              });
+            }
+          }
+        }
+      });
+    }
   },
 
+
+
+  likeItem() {
+    var me = this;
+    var userInfo = app.globalData.userInfo;
+    if (userInfo == null || userInfo == undefined) {
+      wx.confirm({
+        title: "温馨提示",
+        content: "收藏商品请前往登录",
+        confirmButtonText: "登录",
+        cancelButtonText: "取消",
+        success: (res) => {
+          if (res.confirm) {
+            wx.switchTab({
+              url: "pages/personal_center/personal_center",
+            });
+          }
+        },
+      });
+    } else {
+      wx.request({
+        url: app.serverUrl + '/item/like?itemId=' + me.data.item.id
+          + '&userId=' + userInfo.id,
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res);
+          // 获取拿到后端的数据
+          var myData = res.data;
+          if (myData.status == 200) {
+            wx.setData({
+              unlikeHidden: true,
+              likeHidden: false,
+            });
+          }
+        }
+      });
+    }
+  },
+
+  unlikeItem() {
+    var me = this;
+    var userInfo = app.globalData.userInfo;
+    wx.request({
+      url: app.serverUrl + '/item/unlike?itemId=' + me.data.item.id
+        + '&userId=' + userInfo.id,
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res);
+        // 获取拿到后端的数据
+        var myData = res.data;
+        if (myData.status == 200) {
+          wx.setData({
+            unlikeHidden: false,
+            likeHidden: true,
+          });
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

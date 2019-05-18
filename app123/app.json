@@ -1,9 +1,12 @@
 {
   "pages": [
+   
+    "pages/personal_center/Address/Address",
+      "pages/personal_center/personal_center",
     "pages/cart/cart",
-      "pages/index/index",
+     
     "pages/index/movie-detail/movie-detail",
-    
+    "pages/index/index",
       
      
 
@@ -11,10 +14,10 @@
     
    
    
-  
+ 
     "pages/classify/classify",
    "pages/search/search",
-    "pages/personal_center/personal_center",
+ 
     "pages/personal_center/order/order",
     "pages/search/search_result/search_result",
     "pages/index/more-movie/more-movie"
