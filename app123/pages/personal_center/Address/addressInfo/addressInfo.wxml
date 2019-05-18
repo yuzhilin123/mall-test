@@ -2,7 +2,7 @@
     <view class="myaddress">
         <view class="address-line border-line">
             <view class="ico-label">
-                <image src="/resources/icon/smallIco/address-person.png" class="address-ico"/>
+                <image src="../../../../images/icon/address-person.png" class="address-ico"/>
                 <view class="address-lable">                    
                     收货人:                
                 </view>
@@ -14,7 +14,7 @@
 
         <view class="address-line border-line">
             <view class="ico-label">
-                <image src="/resources/icon/smallIco/address-mobile.png" class="address-ico"/>
+                <image src="../../../../images/icon/address-mobile.png" class="address-ico"/>
                 <view class="address-lable">                    
                     手机号:                
                 </view>
@@ -26,7 +26,7 @@
 
         <view class="address-line border-line">
             <view class="ico-label">
-                <image src="/resources/icon/smallIco/address-city.png" class="address-ico"/>
+                <image src="../../../../images/icon/address-city.png" class="address-ico"/>
                 <view class="address-lable">				            
                     所在城市:				        
                 </view>
@@ -41,7 +41,7 @@
 
         <view class="address-line">
             <view class="ico-label">
-                <image src="/resources/icon/smallIco/address-desc.png" class="address-ico"/>
+                <image src="../../../../images/icon/address-desc.png" class="address-ico"/>
                 <view class="address-lable">                    
                     详细地址:                
                 </view>
